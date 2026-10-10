@@ -635,8 +635,8 @@ html.no-scroll { overflow: hidden; }
 .view-form { flex: 1; min-height: 0; display: flex; flex-direction: column; margin: 0; }
 
 .delivery .section-title { font-size: clamp(40px, 10vw, 72px); }
-.card-foot { flex-wrap: wrap; }
 @media (max-width: 559px) {
+  .card-foot { flex-wrap: wrap; }
   .card { grid-template-columns: 100px minmax(0, 1fr); gap: 0 12px; }
   .card h3 { font-size: 18px; }
   .price { font-size: 17px; }

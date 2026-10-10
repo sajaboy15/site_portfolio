@@ -164,16 +164,17 @@
   }
 
   function wedges() {
-    var w = [[86, 128, -18], [124, 118, 8], [158, 132, 24], [104, 146, 4], [142, 150, -10], [70, 150, 30], [122, 136, -30]];
-    var s = '<ellipse cx="120" cy="230" rx="94" ry="9" fill="#111" opacity=".12"/>';
-    s += '<path d="M28 150 H212 L194 214 Q191 224 180 224 H60 Q49 224 46 214Z" fill="#fff"/>';
+    var w = [[78, 140, -24], [122, 124, 6], [164, 140, 26], [100, 150, -6], [146, 154, 12], [122, 146, -2]];
+    var s = '<ellipse cx="120" cy="236" rx="90" ry="9" fill="#111" opacity=".12"/>';
+    s += '<path d="M40 150 q10 -14 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0 V176 H40Z" fill="#fff"/>';
     s += w.map(function (t) {
-      return '<g transform="translate(' + t[0] + ' ' + t[1] + ') rotate(' + t[2] + ')"><path d="M-36 6 Q0 -30 36 6 Q0 -6 -36 6Z" fill="#f1b350"/><path d="M-36 6 Q0 -30 36 6" stroke="#a9651f" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M-16 -2 Q0 -8 14 -3" stroke="#ffd98a" stroke-width="3" fill="none" stroke-linecap="round"/></g>';
+      return '<g transform="translate(' + t[0] + ' ' + t[1] + ') rotate(' + t[2] + ')"><path d="M-36 10 Q-32 -24 0 -26 Q32 -24 36 10 Q0 0 -36 10Z" fill="#f4bb55"/><path d="M-36 10 Q-32 -24 0 -26 Q32 -24 36 10" stroke="#a9651f" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M-18 -6 Q0 -14 16 -8" stroke="#ffe0a0" stroke-width="4" fill="none" stroke-linecap="round"/><g fill="#c0392b" opacity=".55"><circle cx="-10" cy="0" r="1.6"/><circle cx="8" cy="-4" r="1.6"/><circle cx="20" cy="2" r="1.4"/></g></g>';
     }).join('');
-    s += '<path d="M24 158 H216 L198 218 Q195 228 184 228 H56 Q45 228 42 218Z" fill="' + C.red + '"/>';
-    s += '<path d="M24 158 H216 L213 168 H27Z" fill="' + C.redSh + '"/>';
-    for (var i = 0; i < 6; i++) s += '<rect x="' + (52 + i * 24) + '" y="176" width="12" height="44" rx="3" fill="#fff" opacity=".9" transform="skewX(' + (-14 + i * 5.6) + ')"/>';
-    s += '<g fill="#3a9a2c"><circle cx="96" cy="120" r="2.2"/><circle cx="140" cy="112" r="2"/><circle cx="118" cy="128" r="1.8"/><circle cx="160" cy="126" r="2"/></g>';
+    s += '<path d="M30 160 H210 L194 226 Q192 236 182 236 H58 Q48 236 46 226Z" fill="' + C.red + '"/>';
+    s += '<path d="M210 160 L194 226 Q192 236 182 236 H172 L194 160Z" fill="' + C.redSh + '"/>';
+    s += '<path d="M30 160 H210 L208 170 H32Z" fill="' + C.redSh + '"/>';
+    s += '<circle cx="118" cy="200" r="20" fill="' + C.yellow + '"/><path d="M107 201c0-6.5 5-10 11-10s11 3.5 11 10z" fill="#111"/><rect x="105" y="203" width="26" height="3.6" rx="1.8" fill="' + C.red + '"/><path d="M107 208.5h22v1c0 2.2-1.8 3.6-3.8 3.6h-14.4c-2 0-3.8-1.4-3.8-3.6z" fill="#111"/>';
+    s += '<g fill="#3a9a2c"><circle cx="96" cy="128" r="2.2"/><circle cx="140" cy="116" r="2"/><circle cx="118" cy="134" r="1.8"/><circle cx="160" cy="132" r="2"/><circle cx="80" cy="138" r="1.8"/></g>';
     return s;
   }
 
@@ -190,7 +191,7 @@
     s += nugget(88, 132, -12, 1.15) + nugget(132, 126, 18, 1.2) + nugget(170, 140, -24, 1.05);
     s += nugget(70, 162, 22, 1.1) + nugget(112, 160, -6, 1.25) + nugget(156, 168, 12, 1.15);
     s += '<path d="M34 158 H206 L194 222 Q192 230 182 230 H58 Q48 230 46 222Z" fill="#111"/>';
-    s += '<text x="120" y="206" text-anchor="middle" font-family="Dela Gothic One, Arial Black, sans-serif" font-size="26" fill="' + C.yellow + '">NUGGETS</text>';
+    s += '<text x="120" y="206" text-anchor="middle" font-family="Dela Gothic One, Arial Black, sans-serif" font-size="20" fill="' + C.yellow + '">NUGGETS</text>';
     s += '<path d="M40 166 H200" stroke="' + C.yellow + '" stroke-width="3" stroke-dasharray="2 8" stroke-linecap="round"/>';
     return s;
   }
@@ -367,16 +368,31 @@
     var el = $('#heroBurger'); if (!el) return;
     var lay = burgerLayout(heroSpec), n = lay.layers.length, mid = (n - 1) / 2;
     var oy = (500 - lay.total) / 2 - 10, out = '';
-    out += '<g class="ly" style="--o:' + Math.round((n - 1 - mid) * 34) + '"><ellipse class="shadow" cx="240" cy="' + (oy + lay.total + 18) + '" rx="112" ry="11" fill="#111" opacity=".22"/></g>';
+    out += '<g class="ly" style="--o:' + Math.round((n - 1 - mid) * 34 * 1.3) + '"><ellipse class="shadow" cx="240" cy="' + (oy + lay.total + 26) + '" rx="100" ry="9" fill="#111" opacity=".16"/></g>';
     for (var i = n - 1; i >= 0; i--) {
       var L = lay.layers[i], cy = L.y + oy + Math.min(L.t.vis, 30) / 2;
       var left = i % 2 === 0, o = Math.round((i - mid) * 34);
       var lbl = '<g class="lbl">' + (left
-        ? '<path d="M136 ' + cy + ' H110" stroke="#111" stroke-width="2" stroke-dasharray="3 4"/><circle cx="136" cy="' + cy + '" r="4" fill="#111"/><text x="104" y="' + (cy + 4.5) + '" text-anchor="end">' + esc(heroLabels[i]) + '</text>'
-        : '<path d="M344 ' + cy + ' H370" stroke="#111" stroke-width="2" stroke-dasharray="3 4"/><circle cx="344" cy="' + cy + '" r="4" fill="#111"/><text x="376" y="' + (cy + 4.5) + '">' + esc(heroLabels[i]) + '</text>') + '</g>';
+        ? '<path d="M136 ' + cy + ' H114" stroke="#111" stroke-width="2" stroke-dasharray="3 4"/><circle cx="136" cy="' + cy + '" r="4" fill="#111"/><text x="102" y="' + (cy + 4.5) + '" text-anchor="end">' + esc(heroLabels[i]) + '</text>'
+        : '<path d="M344 ' + cy + ' H366" stroke="#111" stroke-width="2" stroke-dasharray="3 4"/><circle cx="344" cy="' + cy + '" r="4" fill="#111"/><text x="378" y="' + (cy + 4.5) + '">' + esc(heroLabels[i]) + '</text>') + '</g>';
       out += '<g class="ly" style="--o:' + o + '"><g class="bob" style="--i:' + i + '"><g transform="translate(120 ' + oy + ')">' + L.t.draw(L.y, L.o) + '</g>' + (i === n - 1 ? '' : lbl) + '</g></g>';
     }
     el.innerHTML = out;
+    // white pill behind each label (re-measured once web fonts load)
+    function pills() { $$('.lbl rect', el).forEach(function (r) { r.remove(); }); $$('.lbl text', el).forEach(pill); }
+    pills();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(pills);
+    function pill(t) {
+      try {
+        var bb = t.getBBox(); if (!bb.width) return;
+        var r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        r.setAttribute('x', bb.x - 10); r.setAttribute('y', bb.y - 5);
+        r.setAttribute('width', bb.width + 20); r.setAttribute('height', bb.height + 10);
+        r.setAttribute('rx', (bb.height + 10) / 2); r.setAttribute('fill', '#fff');
+        r.setAttribute('stroke', '#111'); r.setAttribute('stroke-width', '2');
+        t.parentNode.insertBefore(r, t);
+      } catch (e) { /* hidden or unsupported */ }
+    }
   })();
 
   /* =========================================================
