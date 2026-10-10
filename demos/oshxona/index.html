@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oshxona Navro‘z — плов из казана в Ташкенте (концепт)</title>
+<meta name="description" content="Концепт сайта узбекской чайханы Oshxona Navro‘z: меню с заказом доставки, бронирование стола, атмосфера и контакты. Демонстрационный проект студии SAJA BOYS.">
+<meta name="theme-color" content="#0f2a3f">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f2a3f'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23e8b04b'/%3E%3Cpolygon points='16,6 26,16 16,26 6,16' fill='%23e8b04b'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%230f2a3f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap&subset=cyrillic" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- ===== SVG defs & sprite (decorative) ===== -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- Girih 8-point star patterns -->
+    <pattern id="p-girih-gold" width="64" height="64" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#e8b04b" stroke-width="1.4">
+        <rect x="20" y="20" width="24" height="24"/>
+        <polygon points="32,15 49,32 32,49 15,32"/>
+        <polygon points="0,-6 6,0 0,6 -6,0"/><polygon points="64,-6 70,0 64,6 58,0"/>
+        <polygon points="0,58 6,64 0,70 -6,64"/><polygon points="64,58 70,64 64,70 58,64"/>
+        <path d="M6 0 H20 M44 0 H58 M6 64 H20 M44 64 H58 M0 6 V20 M0 44 V58 M64 6 V20 M64 44 V58"/>
+      </g>
+      <circle cx="32" cy="32" r="2.4" fill="#e8b04b"/>
+    </pattern>
+    <pattern id="p-girih-terra" width="64" height="64" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#c4512c" stroke-width="1.2">
+        <rect x="20" y="20" width="24" height="24"/>
+        <polygon points="32,15 49,32 32,49 15,32"/>
+        <polygon points="0,-6 6,0 0,6 -6,0"/><polygon points="64,-6 70,0 64,6 58,0"/>
+        <polygon points="0,58 6,64 0,70 -6,64"/><polygon points="64,58 70,64 64,70 58,64"/>
+      </g>
+      <circle cx="32" cy="32" r="2" fill="#c4512c"/>
+    </pattern>
+    <!-- Ikat / suzani stepped band -->
+    <pattern id="p-ikat" width="48" height="28" patternUnits="userSpaceOnUse">
+      <polygon fill="#c4512c" points="24,2 29,2 29,5 34,5 34,8 39,8 39,11 44,11 44,17 39,17 39,20 34,20 34,23 29,23 29,26 19,26 19,23 14,23 14,20 9,20 9,17 4,17 4,11 9,11 9,8 14,8 14,5 19,5 19,2"/>
+      <polygon fill="#e8b04b" points="19,8 29,8 29,11 34,11 34,17 29,17 29,20 19,20 19,17 14,17 14,11 19,11"/>
+      <rect x="22" y="12" width="4" height="4" fill="#f7efe1"/>
+      <circle cx="0" cy="14" r="3" fill="#49c0b6"/><circle cx="48" cy="14" r="3" fill="#49c0b6"/>
+      <rect x="0" y="0" width="48" height="1.5" fill="#e8b04b" opacity=".5"/>
+      <rect x="0" y="26.5" width="48" height="1.5" fill="#e8b04b" opacity=".5"/>
+    </pattern>
+    <radialGradient id="g-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#f3a73b"/><stop offset=".6" stop-color="#c4512c"/><stop offset="1" stop-color="#5a1f0e"/>
+    </radialGradient>
+    <radialGradient id="g-broth" cx="45%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#f0bb63"/><stop offset="1" stop-color="#d98a3a"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== Dish icons (64x64) ===== -->
+  <symbol id="i-plov" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#1b6a82"/>
+    <circle cx="32" cy="32" r="26.2" fill="none" stroke="#49c0b6" stroke-width="2" stroke-dasharray="1 4.2" stroke-linecap="round"/>
+    <circle cx="32" cy="32" r="22.5" fill="#f6ead3"/>
+    <circle cx="32" cy="32" r="18.5" fill="#e6b86a"/>
+    <g stroke="#fbe7b8" stroke-width="2" stroke-linecap="round"><path d="M21 27l4 1M36 19l3-2M42 37l4 1M23 41l3 2M30 45l4-1M44 27l2 3M18 33l3-1M28 20l3 1"/></g>
+    <g stroke="#e0672a" stroke-width="2.6" stroke-linecap="round"><path d="M26 22l6 3M41 42l-5 3M19 38l2-5M45 33l-3-5"/></g>
+    <rect x="26" y="28" width="13" height="8" rx="3.5" fill="#7a3b22" transform="rotate(-15 32 32)"/>
+    <rect x="26" y="28" width="13" height="3.4" rx="1.7" fill="#a35a35" transform="rotate(-15 32 32)"/>
+    <circle cx="39" cy="24" r="4.2" fill="#fffaf0"/><circle cx="39" cy="24" r="2" fill="#f2a823"/>
+    <circle cx="24" cy="31" r="2.3" fill="#f2d391" stroke="#c99a55" stroke-width=".7"/>
+    <circle cx="36" cy="40" r="2.3" fill="#f2d391" stroke="#c99a55" stroke-width=".7"/>
+  </symbol>
+
+  <symbol id="i-lagan" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="30" fill="#c4512c"/>
+    <circle cx="32" cy="32" r="27" fill="none" stroke="#f7efe1" stroke-width="2" stroke-dasharray="4 3"/>
+    <circle cx="32" cy="32" r="23.5" fill="#f6ead3"/>
+    <circle cx="32" cy="32" r="20" fill="#e6b86a"/>
+    <g stroke="#fbe7b8" stroke-width="2" stroke-linecap="round"><path d="M17 30l4-1M44 20l3 2M46 38l-3 2M22 44l4 1M34 47l3-1M20 22l3 2"/></g>
+    <g stroke="#e0672a" stroke-width="2.6" stroke-linecap="round"><path d="M18 36l3-4M44 44l-4 2M42 18l-5 1"/></g>
+    <g fill="#7a3b22"><rect x="20" y="23" width="11" height="7" rx="3"/><rect x="34" y="34" width="11" height="7" rx="3"/><rect x="21" y="35" width="10" height="7" rx="3" transform="rotate(20 26 38)"/></g>
+    <g fill="#fffaf0"><circle cx="40" cy="26" r="3.8"/><circle cx="31" cy="44" r="3.4"/></g>
+    <g fill="#f2a823"><circle cx="40" cy="26" r="1.8"/><circle cx="31" cy="44" r="1.6"/></g>
+    <circle cx="32" cy="32" r="4.6" fill="#f4ead6" stroke="#d9c7a6"/>
+  </symbol>
+
+  <symbol id="i-veg" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#2fa79c"/>
+    <circle cx="32" cy="32" r="23" fill="#f6ead3"/>
+    <circle cx="32" cy="32" r="19" fill="#e9c27a"/>
+    <g stroke="#fbe7b8" stroke-width="2" stroke-linecap="round"><path d="M21 27l4 1M36 19l3-2M42 37l4 1M23 41l3 2M44 27l2 3"/></g>
+    <g fill="#f2d391" stroke="#c99a55" stroke-width=".7"><circle cx="25" cy="30" r="2.6"/><circle cx="38" cy="41" r="2.6"/><circle cx="34" cy="23" r="2.6"/><circle cx="29" cy="38" r="2.6"/></g>
+    <path d="M36 30c4-3 9-1 9 3s-5 6-9 3z" fill="#e8b04b"/>
+    <g fill="#5a2a3a"><ellipse cx="22" cy="36" rx="2.2" ry="1.4"/><ellipse cx="41" cy="25" rx="2.2" ry="1.4"/><ellipse cx="31" cy="45" rx="2.2" ry="1.4"/></g>
+  </symbol>
+
+  <symbol id="i-skewer" viewBox="0 0 64 64">
+    <g transform="rotate(-35 32 32)">
+      <line x1="2" y1="32" x2="61" y2="32" stroke="#8d9aa6" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="5" cy="32" r="3.6" fill="none" stroke="#8d9aa6" stroke-width="2"/>
+      <rect x="13" y="24.5" width="10" height="15" rx="4.5" fill="#7a3b22"/><rect x="13" y="24.5" width="10" height="5" rx="2.5" fill="#a35a35"/>
+      <rect x="24.5" y="27" width="4" height="10" rx="2" fill="#f1d9c4"/>
+      <rect x="30" y="24" width="11" height="16" rx="4.5" fill="#86422a"/><rect x="30" y="24" width="11" height="5" rx="2.5" fill="#a85d37"/>
+      <rect x="42.5" y="27" width="4" height="10" rx="2" fill="#f1d9c4"/>
+      <rect x="48" y="25" width="9" height="14" rx="4.5" fill="#7a3b22"/><rect x="48" y="25" width="9" height="4.5" rx="2.2" fill="#a35a35"/>
+      <g stroke="#4b2213" stroke-width="1.4" stroke-linecap="round" opacity=".7"><path d="M16 34l4-3M33 35l5-3M50 34l4-3"/></g>
+    </g>
+    <g fill="#3d8a5a"><circle cx="14" cy="50" r="2"/><circle cx="19" cy="54" r="1.6"/><circle cx="50" cy="13" r="1.6"/></g>
+  </symbol>
+
+  <symbol id="i-lula" viewBox="0 0 64 64">
+    <g transform="rotate(-35 32 32)">
+      <line x1="2" y1="32" x2="61" y2="32" stroke="#8d9aa6" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="5" cy="32" r="3.6" fill="none" stroke="#8d9aa6" stroke-width="2"/>
+      <rect x="13" y="25" width="44" height="14" rx="7" fill="#8a4527"/>
+      <rect x="15" y="25" width="40" height="5" rx="2.5" fill="#ad6438"/>
+      <g stroke="#4b2213" stroke-width="2" stroke-linecap="round" opacity=".75"><path d="M20 37l5-8M29 37l5-8M38 37l5-8M47 37l5-8"/></g>
+    </g>
+    <g fill="none" stroke="#b98bb6" stroke-width="1.8"><circle cx="15" cy="49" r="4"/><circle cx="23" cy="54" r="3.2"/></g>
+    <g fill="#3d8a5a"><circle cx="48" cy="14" r="2"/><circle cx="53" cy="18" r="1.6"/></g>
+  </symbol>
+
+  <symbol id="i-vegskewer" viewBox="0 0 64 64">
+    <g transform="rotate(-35 32 32)">
+      <line x1="2" y1="32" x2="61" y2="32" stroke="#8d9aa6" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="5" cy="32" r="3.6" fill="none" stroke="#8d9aa6" stroke-width="2"/>
+      <circle cx="19" cy="32" r="7" fill="#d9432f"/><circle cx="17" cy="30" r="2" fill="#ef7a5f"/>
+      <rect x="27" y="24" width="8" height="16" rx="3" fill="#3d8a5a"/>
+      <ellipse cx="44" cy="32" rx="6" ry="8" fill="#5b2d5e"/><ellipse cx="43" cy="29" rx="2" ry="3" fill="#7d4a80"/>
+      <rect x="52" y="25" width="6" height="14" rx="3" fill="#e8b04b"/>
+    </g>
+  </symbol>
+
+  <symbol id="i-wings" viewBox="0 0 64 64">
+    <ellipse cx="32" cy="36" rx="26" ry="19" fill="#f7efe1" stroke="#1b6a82" stroke-width="3"/>
+    <path d="M14 34c2-8 12-11 18-6 3 2 2 7-2 8-5 2-9 4-11 7-3-1-6-4-5-9z" fill="#c26a2e"/>
+    <path d="M14 34c2-8 12-11 18-6" fill="none" stroke="#e39a52" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M50 33c-1-8-11-12-18-7-3 2-2 7 2 9 5 2 8 5 10 8 3-1 7-4 6-10z" fill="#b65f27"/>
+    <path d="M50 33c-1-8-11-12-18-7" fill="none" stroke="#e39a52" stroke-width="2.4" stroke-linecap="round"/>
+    <g fill="#3d8a5a"><circle cx="30" cy="45" r="1.8"/><circle cx="35" cy="46" r="1.5"/></g>
+    <g fill="#d9432f"><circle cx="24" cy="28" r="1.2"/><circle cx="41" cy="30" r="1.2"/></g>
+  </symbol>
+
+  <symbol id="i-liver" viewBox="0 0 64 64">
+    <g transform="rotate(-35 32 32)">
+      <line x1="2" y1="32" x2="61" y2="32" stroke="#8d9aa6" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="5" cy="32" r="3.6" fill="none" stroke="#8d9aa6" stroke-width="2"/>
+      <rect x="13" y="25" width="9" height="14" rx="3" fill="#5c2420"/><rect x="22" y="26" width="5" height="12" rx="2" fill="#f1dcc0"/>
+      <rect x="27" y="25" width="9" height="14" rx="3" fill="#5c2420"/><rect x="36" y="26" width="5" height="12" rx="2" fill="#f1dcc0"/>
+      <rect x="41" y="25" width="9" height="14" rx="3" fill="#5c2420"/><rect x="50" y="26" width="5" height="12" rx="2" fill="#f1dcc0"/>
+    </g>
+  </symbol>
+
+  <symbol id="i-samsa" viewBox="0 0 64 64">
+    <path d="M29 9.5a3.5 3.5 0 0 1 6 0l21.5 38.5c1.6 2.9-.4 6-3.6 6H11.1c-3.2 0-5.2-3.1-3.6-6z" fill="#e2a246"/>
+    <path d="M8.3 46.5h47.4l.8 1.5c1.6 2.9-.4 6-3.6 6H11.1c-3.2 0-5.2-3.1-3.6-6z" fill="#c4842c"/>
+    <path d="M32 12v34M32 12L18 46M32 12l14 34" stroke="#c98a2e" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+    <path d="M30 17L22 33" stroke="#f6d48a" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+    <g fill="#fbefd6"><ellipse cx="32" cy="24" rx="1.5" ry=".9"/><ellipse cx="27" cy="34" rx="1.5" ry=".9" transform="rotate(30 27 34)"/><ellipse cx="37" cy="31" rx="1.5" ry=".9" transform="rotate(-30 37 31)"/><ellipse cx="33" cy="40" rx="1.5" ry=".9"/><ellipse cx="41" cy="42" rx="1.5" ry=".9" transform="rotate(20 41 42)"/><ellipse cx="22" cy="42" rx="1.5" ry=".9" transform="rotate(-20 22 42)"/></g>
+  </symbol>
+
+  <symbol id="i-pumpkin" viewBox="0 0 64 64">
+    <path d="M29 9.5a3.5 3.5 0 0 1 6 0l21.5 38.5c1.6 2.9-.4 6-3.6 6H11.1c-3.2 0-5.2-3.1-3.6-6z" fill="#e7b04f"/>
+    <path d="M8.3 46.5h47.4l.8 1.5c1.6 2.9-.4 6-3.6 6H11.1c-3.2 0-5.2-3.1-3.6-6z" fill="#cf8a2f"/>
+    <path d="M26 34c2-5 10-5 12 0 1.5 4-2 8-6 8s-7.5-4-6-8z" fill="#e5702a"/>
+    <path d="M32 26v5" stroke="#3d8a5a" stroke-width="2.4" stroke-linecap="round"/>
+    <g fill="#fbefd6"><ellipse cx="32" cy="20" rx="1.5" ry=".9"/><ellipse cx="22" cy="42" rx="1.5" ry=".9"/><ellipse cx="42" cy="42" rx="1.5" ry=".9"/></g>
+  </symbol>
+
+  <symbol id="i-sloyka" viewBox="0 0 64 64">
+    <rect x="9" y="14" width="46" height="38" rx="10" fill="#e2a246"/>
+    <rect x="9" y="40" width="46" height="12" rx="6" fill="#c4842c"/>
+    <path d="M15 22h34M15 29h34M15 36h34" stroke="#f3c674" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M15 25.5h34M15 32.5h34" stroke="#c98a2e" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+    <g fill="#3a2a22"><circle cx="24" cy="18" r="1"/><circle cx="36" cy="19" r="1"/><circle cx="44" cy="17" r="1"/></g>
+  </symbol>
+
+  <symbol id="i-non" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#c27632"/>
+    <circle cx="32" cy="32" r="25" fill="#dc9a4f"/>
+    <circle cx="32" cy="32" r="14" fill="#ebb86e"/>
+    <circle cx="32" cy="32" r="14" fill="none" stroke="#c27632" stroke-width="1.4" opacity=".6"/>
+    <g fill="#9e5722"><circle cx="32" cy="32" r="1.4"/><circle cx="32" cy="25" r="1.2"/><circle cx="32" cy="39" r="1.2"/><circle cx="25" cy="32" r="1.2"/><circle cx="39" cy="32" r="1.2"/><circle cx="27" cy="27" r="1.2"/><circle cx="37" cy="37" r="1.2"/><circle cx="37" cy="27" r="1.2"/><circle cx="27" cy="37" r="1.2"/><circle cx="32" cy="20.5" r="1"/><circle cx="32" cy="43.5" r="1"/><circle cx="20.5" cy="32" r="1"/><circle cx="43.5" cy="32" r="1"/></g>
+    <g fill="#fbefd6"><ellipse cx="20" cy="15" rx="1.4" ry=".8"/><ellipse cx="46" cy="16" rx="1.4" ry=".8" transform="rotate(40 46 16)"/><ellipse cx="51" cy="35" rx="1.4" ry=".8" transform="rotate(80 51 35)"/><ellipse cx="44" cy="50" rx="1.4" ry=".8"/><ellipse cx="22" cy="50" rx="1.4" ry=".8" transform="rotate(-30 22 50)"/><ellipse cx="12" cy="30" rx="1.4" ry=".8" transform="rotate(90 12 30)"/></g>
+    <path d="M14 22a22 22 0 0 1 12-9" fill="none" stroke="#f0bf79" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="i-gumma" viewBox="0 0 64 64">
+    <path d="M8 40c0-12 11-20 24-20s24 8 24 20H8z" fill="#d68c3e"/>
+    <path d="M8 40h48c0 3-2 5-5 5H13c-3 0-5-2-5-5z" fill="#b8702a"/>
+    <path d="M12 38c1-9 9-15 20-15s19 6 20 15" fill="none" stroke="#a9611f" stroke-width="2" stroke-dasharray="2 3" stroke-linecap="round"/>
+    <path d="M18 30c3-3 7-4 11-4" stroke="#f0bf79" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  </symbol>
+
+  <symbol id="i-soup" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#c4512c"/>
+    <circle cx="32" cy="32" r="25.8" fill="none" stroke="#f7efe1" stroke-width="1.6" stroke-dasharray="1 3.4" stroke-linecap="round"/>
+    <circle cx="32" cy="32" r="22" fill="url(#g-broth)"/>
+    <rect x="22" y="24" width="10" height="8" rx="3" fill="#7a3b22"/>
+    <rect x="35" y="35" width="9" height="7" rx="3" fill="#86422a"/>
+    <rect x="35" y="22" width="8" height="8" rx="2" fill="#f5dc9e"/>
+    <rect x="22" y="37" width="7" height="7" rx="2" fill="#f5dc9e"/>
+    <circle cx="31" cy="44" r="3.2" fill="#e0672a"/><circle cx="42" cy="30" r="2.6" fill="#e0672a"/>
+    <g fill="#3d8a5a"><circle cx="27" cy="20" r="1.3"/><circle cx="45" cy="40" r="1.3"/><circle cx="19" cy="32" r="1.3"/><circle cx="34" cy="33" r="1.1"/><circle cx="40" cy="46" r="1.1"/></g>
+    <ellipse cx="26" cy="22" rx="5" ry="2" fill="#fff" opacity=".25" transform="rotate(-30 26 22)"/>
+  </symbol>
+
+  <symbol id="i-lagman" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#1b6a82"/>
+    <circle cx="32" cy="32" r="25.8" fill="none" stroke="#49c0b6" stroke-width="1.6" stroke-dasharray="3 3"/>
+    <circle cx="32" cy="32" r="22" fill="#d9763e"/>
+    <g fill="none" stroke="#f6dfa6" stroke-width="2.6" stroke-linecap="round"><path d="M14 30c5-6 10 6 15 0s10 6 15 0 6 4 6 4"/><path d="M15 37c5-6 10 6 15 0s10 6 15 0"/><path d="M19 23c4-4 8 4 12 0s8 4 12 0"/><path d="M20 44c4-4 8 4 12 0s8 4 12 0"/></g>
+    <rect x="34" y="18" width="7" height="5" rx="2" fill="#7a3b22"/>
+    <g fill="#3d8a5a"><rect x="24" y="33" width="5" height="3" rx="1.5"/><rect x="40" y="37" width="5" height="3" rx="1.5"/></g>
+    <g fill="#c62f22"><rect x="44" y="27" width="4" height="3" rx="1.5"/><rect x="21" y="40" width="4" height="3" rx="1.5"/></g>
+  </symbol>
+
+  <symbol id="i-mastava" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#f7efe1" stroke="#1b6a82" stroke-width="3"/>
+    <circle cx="32" cy="32" r="22" fill="#e9a650"/>
+    <path d="M28 26c5-3 12 0 11 6-1 5-8 6-11 3-3-2-3-7 0-9z" fill="#fbf6ec"/>
+    <g fill="#f6dfa6"><ellipse cx="20" cy="30" rx="2.6" ry="1.2"/><ellipse cx="43" cy="22" rx="2.6" ry="1.2" transform="rotate(30 43 22)"/><ellipse cx="44" cy="40" rx="2.6" ry="1.2"/><ellipse cx="25" cy="45" rx="2.6" ry="1.2" transform="rotate(-25 25 45)"/></g>
+    <g fill="#3d8a5a"><circle cx="31" cy="30" r="1.3"/><circle cx="35" cy="32" r="1.1"/><circle cx="33" cy="28" r="1"/><circle cx="22" cy="22" r="1.3"/><circle cx="41" cy="46" r="1.3"/></g>
+    <rect x="37" y="42" width="6" height="5" rx="2" fill="#7a3b22"/>
+  </symbol>
+
+  <symbol id="i-chuchvara" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#2fa79c"/>
+    <circle cx="32" cy="32" r="22" fill="#e6b261"/>
+    <g fill="#fbf1dc" stroke="#e1c99c" stroke-width="1"><path d="M18 30c0-5 8-6 9-1 3-2 6 1 3 4-4 3-12 2-12-3z"/><path d="M33 20c0-5 8-6 9-1 3-2 6 1 3 4-4 3-12 2-12-3z"/><path d="M34 38c0-5 8-6 9-1 3-2 6 1 3 4-4 3-12 2-12-3z"/><path d="M20 42c0-4 7-5 8-1 3-1 5 1 3 3-4 3-11 2-11-2z"/></g>
+    <g fill="#3d8a5a"><circle cx="30" cy="31" r="1.3"/><circle cx="27" cy="22" r="1.1"/><circle cx="44" cy="31" r="1.3"/></g>
+  </symbol>
+
+  <symbol id="i-salad" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#f7efe1" stroke="#1b6a82" stroke-width="3"/>
+    <circle cx="32" cy="32" r="22" fill="none" stroke="#49c0b6" stroke-width="1.4" stroke-dasharray="1 3" stroke-linecap="round"/>
+    <g><circle cx="24" cy="25" r="8" fill="#d9432f"/><circle cx="24" cy="25" r="5.5" fill="#ef6a4f"/><circle cx="40" cy="26" r="8" fill="#d9432f"/><circle cx="40" cy="26" r="5.5" fill="#ef6a4f"/><circle cx="31" cy="40" r="8" fill="#d9432f"/><circle cx="31" cy="40" r="5.5" fill="#ef6a4f"/></g>
+    <g fill="#f8d36a"><circle cx="22" cy="24" r="1"/><circle cx="26" cy="27" r="1"/><circle cx="39" cy="24" r="1"/><circle cx="42" cy="28" r="1"/><circle cx="30" cy="38" r="1"/><circle cx="33" cy="42" r="1"/></g>
+    <g fill="none" stroke="#a8749f" stroke-width="1.8"><circle cx="43" cy="40" r="4.5"/><circle cx="21" cy="38" r="4"/><circle cx="32" cy="18" r="3.5"/></g>
+    <g fill="#3d8a5a"><ellipse cx="46" cy="33" rx="3" ry="1.6" transform="rotate(40 46 33)"/><ellipse cx="17" cy="31" rx="3" ry="1.6" transform="rotate(-30 17 31)"/><ellipse cx="33" cy="30" rx="2.6" ry="1.4"/></g>
+  </symbol>
+
+  <symbol id="i-tashkent" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#1b6a82"/>
+    <circle cx="32" cy="32" r="23" fill="#f6ead3"/>
+    <path d="M32 13c10 0 18 8 18 18 0 2-1 3-3 3H17c-2 0-3-1-3-3 0-10 8-18 18-18z" fill="#f3f0ea"/>
+    <g fill="none" stroke="#d9d0c2" stroke-width="1.3"><path d="M20 26c6-2 18-2 24 0M22 21c5-2 15-2 20 0"/></g>
+    <g fill="#7a3b22"><rect x="18" y="35" width="9" height="5" rx="2"/><rect x="34" y="40" width="10" height="5" rx="2"/></g>
+    <g fill="#c8892e"><path d="M27 41c3-3 7-3 9 0-3 2-6 2-9 0z"/><path d="M19 43c2-2 5-2 7 0-2 2-5 2-7 0z"/></g>
+    <circle cx="44" cy="35" r="4" fill="#fffaf0"/><circle cx="44" cy="35" r="2" fill="#f2a823"/>
+  </symbol>
+
+  <symbol id="i-suzma" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#1b6a82"/>
+    <circle cx="32" cy="32" r="25.6" fill="none" stroke="#f7efe1" stroke-width="1.6" stroke-dasharray="6 3"/>
+    <circle cx="32" cy="32" r="21" fill="#fbf6ec"/>
+    <path d="M22 32c0-6 6-10 11-8s7 8 2 11-9-1-7-4 5-1 5 1" fill="none" stroke="#e5dac4" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#3d8a5a"><circle cx="27" cy="22" r="1.3"/><circle cx="40" cy="24" r="1.3"/><circle cx="44" cy="35" r="1.3"/><circle cx="24" cy="40" r="1.3"/><circle cx="34" cy="43" r="1.3"/><circle cx="20" cy="30" r="1.1"/></g>
+    <g fill="#c62f22"><circle cx="37" cy="38" r="1"/><circle cx="29" cy="35" r=".9"/></g>
+  </symbol>
+
+  <symbol id="i-eggplant" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="29" fill="#f7efe1" stroke="#c4512c" stroke-width="3"/>
+    <g transform="rotate(-25 32 32)"><rect x="12" y="20" width="40" height="11" rx="5.5" fill="#5b2d5e"/><rect x="14" y="22" width="36" height="7" rx="3.5" fill="#e3b46a"/><rect x="12" y="34" width="40" height="11" rx="5.5" fill="#5b2d5e"/><rect x="14" y="36" width="36" height="7" rx="3.5" fill="#e3b46a"/></g>
+    <g fill="#d9432f"><circle cx="24" cy="33" r="2"/><circle cx="38" cy="30" r="2"/><circle cx="31" cy="43" r="1.8"/></g>
+    <g fill="#3d8a5a"><circle cx="28" cy="24" r="1.4"/><circle cx="42" cy="38" r="1.4"/></g>
+  </symbol>
+
+  <symbol id="i-teapot" viewBox="0 0 64 64">
+    <path d="M47 35c6-2 9-8 11-14l-3-1c-2 5-5 9-9 10z" fill="#1b6a82"/>
+    <path d="M17 33c-7 0-10 4-9 9 1 4 5 6 9 5" fill="none" stroke="#14506a" stroke-width="3.2" stroke-linecap="round"/>
+    <ellipse cx="32" cy="38" rx="17" ry="14" fill="#1b6a82"/>
+    <path d="M16 36c4 3 9 4 16 4s12-1 16-4" fill="none" stroke="#f7efe1" stroke-width="1.6" opacity=".9"/>
+    <g fill="#f7efe1"><circle cx="21" cy="42" r="1.8"/><circle cx="27" cy="44.5" r="1.8"/><circle cx="33" cy="45.2" r="1.8"/><circle cx="39" cy="44.5" r="1.8"/><circle cx="44" cy="42" r="1.6"/></g>
+    <g fill="#49c0b6"><circle cx="24" cy="43.4" r=".9"/><circle cx="30" cy="45" r=".9"/><circle cx="36" cy="45" r=".9"/><circle cx="41.6" cy="43.4" r=".9"/></g>
+    <ellipse cx="32" cy="25" rx="10.5" ry="3.4" fill="#14506a"/>
+    <path d="M24 25c0-3 4-5 8-5s8 2 8 5" fill="#1b6a82"/>
+    <circle cx="32" cy="18.5" r="3" fill="#e8b04b"/>
+    <ellipse cx="24" cy="33" rx="3" ry="5" fill="#fff" opacity=".18" transform="rotate(30 24 33)"/>
+    <rect x="25" y="51" width="14" height="3" rx="1.5" fill="#14506a"/>
+  </symbol>
+
+  <symbol id="i-piyola" viewBox="0 0 64 64">
+    <g fill="none" stroke="#8d9aa6" stroke-width="2" stroke-linecap="round" opacity=".8"><path d="M26 18c-3-4 3-6 0-10"/><path d="M34 19c-3-4 3-6 0-10"/></g>
+    <path d="M10 26h44c-1 13-10 22-22 22S11 39 10 26z" fill="#f7efe1"/>
+    <path d="M12.5 33h39" stroke="#1b6a82" stroke-width="3"/>
+    <g fill="#1b6a82"><path d="M18 38l3 4 3-4-3-2z"/><path d="M29 39l3 4 3-4-3-2z"/><path d="M40 38l3 4 3-4-3-2z"/></g>
+    <ellipse cx="32" cy="26" rx="22" ry="4" fill="#b8692a"/>
+    <ellipse cx="27" cy="25.2" rx="8" ry="1.3" fill="#d89548"/>
+    <rect x="25" y="47" width="14" height="3.4" rx="1.7" fill="#1b6a82"/>
+  </symbol>
+
+  <symbol id="i-jug" viewBox="0 0 64 64">
+    <path d="M42 22c8 0 10 6 9 11s-5 8-9 8" fill="none" stroke="#c7b79c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 12h26l-2 6c3 5 4 10 4 17 0 10-4 17-14 17s-14-7-14-17c0-7 1-12 4-17z" fill="#f4ecdf" opacity=".95"/>
+    <path d="M17.4 28h29c.4 2 .6 4.4.6 7 0 10-4 17-14 17s-14-7-14-17c0-2.6.2-5 .6-7z" fill="#b5532f"/>
+    <g fill="#e8b04b"><circle cx="25" cy="38" r="3.2"/><circle cx="36" cy="44" r="3"/></g>
+    <g fill="#5a2a3a"><circle cx="34" cy="34" r="2.4"/><circle cx="26" cy="46" r="2"/></g>
+    <path d="M22 16v28" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".5"/>
+    <rect x="16" y="10" width="30" height="4" rx="2" fill="#c7b79c"/>
+  </symbol>
+
+  <symbol id="i-lemonade" viewBox="0 0 64 64">
+    <path d="M42 22c8 0 10 6 9 11s-5 8-9 8" fill="none" stroke="#c7b79c" stroke-width="3" stroke-linecap="round"/>
+    <path d="M18 12h26l-2 6c3 5 4 10 4 17 0 10-4 17-14 17s-14-7-14-17c0-7 1-12 4-17z" fill="#f4ecdf" opacity=".95"/>
+    <path d="M17.6 24h28.8c.6 3 .6 7 .6 11 0 10-4 17-14 17s-14-7-14-17c0-4 0-8 .6-11z" fill="#8a4a8f"/>
+    <g fill="#3d8a5a"><ellipse cx="28" cy="20" rx="5" ry="2.4" transform="rotate(-30 28 20)"/><ellipse cx="35" cy="19" rx="4" ry="2" transform="rotate(30 35 19)"/></g>
+    <g fill="#f7efe1" opacity=".7"><rect x="25" y="32" width="6" height="6" rx="1.5" transform="rotate(15 28 35)"/><rect x="34" y="38" width="6" height="6" rx="1.5" transform="rotate(-10 37 41)"/></g>
+    <path d="M22 16v28" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".5"/>
+    <rect x="16" y="10" width="30" height="4" rx="2" fill="#c7b79c"/>
+  </symbol>
+
+  <symbol id="i-ayran" viewBox="0 0 64 64">
+    <path d="M17 12h30l-4 40c-.3 2.4-2 4-4.4 4H25.4c-2.4 0-4.1-1.6-4.4-4z" fill="#e9eef0"/>
+    <path d="M18.6 22h26.8l-2.8 30c-.3 2.4-2 4-4.4 4H25.4c-2.4 0-4.1-1.6-4.4-4z" fill="#fbfaf6"/>
+    <path d="M19 22c4 2 8-2 13 0s9-2 13 0" fill="none" stroke="#e1e6e8" stroke-width="2"/>
+    <g fill="#3d8a5a"><ellipse cx="37" cy="17" rx="5" ry="2.2" transform="rotate(-25 37 17)"/><ellipse cx="30" cy="16" rx="4" ry="2" transform="rotate(25 30 16)"/></g>
+    <path d="M23 26l2 24" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- tea, top-down (hero prop) -->
+  <symbol id="i-tea-top" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="56" fill="#f7efe1"/>
+    <circle cx="60" cy="60" r="56" fill="none" stroke="#1b6a82" stroke-width="6"/>
+    <g fill="#1b6a82"><path d="M60 10l5 7-5 7-5-7z"/><path d="M60 96l5 7-5 7-5-7z"/><path d="M10 60l7-5 7 5-7 5z"/><path d="M96 60l7-5 7 5-7 5z"/><path d="M24.6 24.6l8.5 1.6 1.6 8.5-8.5-1.6z"/><path d="M95.4 95.4l-8.5-1.6-1.6-8.5 8.5 1.6z"/><path d="M95.4 24.6l-1.6 8.5-8.5 1.6 1.6-8.5z"/><path d="M24.6 95.4l1.6-8.5 8.5-1.6-1.6 8.5z"/></g>
+    <circle cx="60" cy="60" r="36" fill="#b8692a"/>
+    <circle cx="60" cy="60" r="36" fill="none" stroke="#9a531d" stroke-width="3"/>
+    <ellipse cx="50" cy="48" rx="14" ry="6" fill="#e3a65a" opacity=".55" transform="rotate(-30 50 48)"/>
+    <circle cx="70" cy="70" r="3" fill="#e3a65a" opacity=".5"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#menu">Перейти к меню</a>
+
+<!-- ===== Header ===== -->
+<header class="hdr" id="hdr">
+  <div class="container hdr__in">
+    <a class="logo" href="#hero" aria-label="Oshxona Navro‘z — наверх">
+      <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect x="10" y="10" width="20" height="20" fill="#e8b04b"/>
+        <polygon points="20,5.9 34.1,20 20,34.1 5.9,20" fill="#e8b04b"/>
+        <circle cx="20" cy="20" r="6" fill="#0f2a3f"/>
+        <circle cx="20" cy="20" r="2.4" fill="#e8b04b"/>
+      </svg>
+      <span class="logo__txt"><span>Oshxona</span> <em>Navro‘z</em></span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <ul class="nav__list">
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#about">Атмосфера</a></li>
+        <li><a href="#booking">Бронь</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+      <a class="btn btn--gold nav__cta" href="#booking">Забронировать стол</a>
+      <p class="nav__note">Ежедневно 10:00–23:00<br>+998 (00) 000-00-00</p>
+    </nav>
+
+    <div class="hdr__actions">
+      <button class="cart-btn" type="button" id="cartBtn" aria-haspopup="dialog" aria-controls="cart" aria-label="Корзина: пусто">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 8h13l-1.1 11.2a2 2 0 0 1-2 1.8H8.6a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10V7a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="cart-btn__count" data-cart-count>0</span>
+      </button>
+      <a class="btn btn--gold hdr__book" href="#booking">Забронировать</a>
+      <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Открыть меню">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="hero" aria-labelledby="hero-title">
+  <svg class="bg-pattern" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#p-girih-gold)"/></svg>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="eyebrow hero__eyebrow"><span class="star" aria-hidden="true"></span>Чайхана · узбекская кухня · Ташкент</p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="line"><span>Плов из казана —</span></span>
+        <span class="line"><span><em>как дома</em></span></span>
+      </h1>
+      <p class="hero__lead">Готовим ош на открытом огне, печём самсу в&nbsp;тандыре и&nbsp;завариваем зелёный чай так, как это делают в&nbsp;махалле. Приходите всей семьёй — или закажите домой.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold btn--lg" href="#menu">
+          Меню
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost btn--lg" href="#booking">Забронировать стол</a>
+      </div>
+      <ul class="hero__facts">
+        <li><b>Казан</b><span>на открытом огне</span></li>
+        <li><b>Тандыр</b><span>самса и нон каждый день</span></li>
+        <li><b>Доставка</b><span>горячим по Ташкенту</span></li>
+      </ul>
+    </div>
+
+    <div class="hero__art" aria-hidden="true">
+      <div class="arch">
+        <svg class="arch__pat" focusable="false"><rect width="100%" height="100%" fill="url(#p-girih-gold)"/></svg>
+      </div>
+      <div class="ring ring--1"></div>
+      <div class="ring ring--2"></div>
+
+      <div class="prop prop--non"><svg viewBox="0 0 64 64" focusable="false"><use href="#i-non"/></svg></div>
+
+      <div class="plate-in">
+        <div class="plate-float">
+          <svg class="plate-shadow" viewBox="0 0 600 600" focusable="false"><circle cx="300" cy="300" r="290" fill="#06141f"/></svg>
+          <svg class="plate" id="plate" viewBox="0 0 600 600" focusable="false">
+            <defs>
+              <radialGradient id="g-mound" cx="46%" cy="42%" r="58%">
+                <stop offset="0" stop-color="#f4d590"/><stop offset=".55" stop-color="#e3b25f"/><stop offset="1" stop-color="#c78a3c"/>
+              </radialGradient>
+              <radialGradient id="g-rim" cx="50%" cy="50%" r="50%">
+                <stop offset=".8" stop-color="#1b6a82"/><stop offset="1" stop-color="#14506a"/>
+              </radialGradient>
+              <path id="pm-petal" d="M0 -281 C12 -268 12 -253 0 -243 C-12 -253 -12 -268 0 -281Z" fill="#49c0b6"/>
+              <path id="pm-petal-in" d="M0 -274 C5.5 -267 5.5 -258 0 -251 C-5.5 -258 -5.5 -267 0 -274Z" fill="#f7efe1"/>
+              <g id="pm-meat">
+                <rect x="-27" y="-12.5" width="54" height="25" rx="11" fill="#743720"/>
+                <rect x="-25" y="-12.5" width="50" height="11" rx="5.5" fill="#9b5131"/>
+                <path d="M-18 6 H16" stroke="#4f2414" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+                <rect x="-27" y="-12.5" width="9" height="25" rx="4.5" fill="#ecd0a6"/>
+              </g>
+              <g id="pm-egg">
+                <ellipse rx="16" ry="12.5" fill="#fffaf0" stroke="#eadfc8" stroke-width="1.5"/>
+                <circle r="7.2" fill="#f2a823"/><circle cx="-2.2" cy="-2.2" r="2.4" fill="#f9cf6a"/>
+              </g>
+              <g id="pm-kazy">
+                <circle r="17" fill="#6b2a20"/><circle r="17" fill="none" stroke="#3f160f" stroke-width="3"/>
+                <circle cx="-5" cy="-3" r="4.4" fill="#f1dcc0"/><circle cx="5.5" cy="5" r="3.2" fill="#f1dcc0"/><circle cx="6" cy="-7" r="2.2" fill="#f1dcc0"/><circle cx="-6" cy="8" r="1.8" fill="#f1dcc0"/>
+              </g>
+            </defs>
+            <!-- plate -->
+            <circle cx="300" cy="300" r="294" fill="#f3e8d3"/>
+            <circle cx="300" cy="300" r="287" fill="url(#g-rim)"/>
+            <g transform="translate(300 300)">
+              <use href="#pm-petal"/><use href="#pm-petal" transform="rotate(22.5)"/><use href="#pm-petal" transform="rotate(45)"/><use href="#pm-petal" transform="rotate(67.5)"/>
+              <use href="#pm-petal" transform="rotate(90)"/><use href="#pm-petal" transform="rotate(112.5)"/><use href="#pm-petal" transform="rotate(135)"/><use href="#pm-petal" transform="rotate(157.5)"/>
+              <use href="#pm-petal" transform="rotate(180)"/><use href="#pm-petal" transform="rotate(202.5)"/><use href="#pm-petal" transform="rotate(225)"/><use href="#pm-petal" transform="rotate(247.5)"/>
+              <use href="#pm-petal" transform="rotate(270)"/><use href="#pm-petal" transform="rotate(292.5)"/><use href="#pm-petal" transform="rotate(315)"/><use href="#pm-petal" transform="rotate(337.5)"/>
+              <use href="#pm-petal-in"/><use href="#pm-petal-in" transform="rotate(22.5)"/><use href="#pm-petal-in" transform="rotate(45)"/><use href="#pm-petal-in" transform="rotate(67.5)"/>
+              <use href="#pm-petal-in" transform="rotate(90)"/><use href="#pm-petal-in" transform="rotate(112.5)"/><use href="#pm-petal-in" transform="rotate(135)"/><use href="#pm-petal-in" transform="rotate(157.5)"/>
+              <use href="#pm-petal-in" transform="rotate(180)"/><use href="#pm-petal-in" transform="rotate(202.5)"/><use href="#pm-petal-in" transform="rotate(225)"/><use href="#pm-petal-in" transform="rotate(247.5)"/>
+              <use href="#pm-petal-in" transform="rotate(270)"/><use href="#pm-petal-in" transform="rotate(292.5)"/><use href="#pm-petal-in" transform="rotate(315)"/><use href="#pm-petal-in" transform="rotate(337.5)"/>
+            </g>
+            <circle cx="300" cy="300" r="262" fill="none" stroke="#e8b04b" stroke-width="7" stroke-dasharray="0 51.4" stroke-linecap="round" transform="rotate(11.25 300 300)"/>
+            <circle cx="300" cy="300" r="238" fill="none" stroke="#f7efe1" stroke-width="5"/>
+            <circle cx="300" cy="300" r="233" fill="#f6ead3"/>
+            <circle cx="300" cy="300" r="222" fill="none" stroke="#49c0b6" stroke-width="2.5" stroke-dasharray="2 10" stroke-linecap="round"/>
+            <circle cx="300" cy="306" r="204" fill="#000" opacity=".07"/>
+            <!-- rice mound -->
+            <circle cx="300" cy="300" r="200" fill="url(#g-mound)"/>
+            <g id="rice"></g>
+            <!-- toppings -->
+            <g transform="translate(300 300)">
+              <use href="#pm-meat" transform="rotate(0) translate(0 -74) rotate(6)"/>
+              <use href="#pm-meat" transform="rotate(60) translate(0 -74) rotate(-4)"/>
+              <use href="#pm-meat" transform="rotate(120) translate(0 -74) rotate(8)"/>
+              <use href="#pm-meat" transform="rotate(180) translate(0 -74) rotate(-6)"/>
+              <use href="#pm-meat" transform="rotate(240) translate(0 -74) rotate(5)"/>
+              <use href="#pm-meat" transform="rotate(300) translate(0 -74) rotate(-3)"/>
+              <use href="#pm-kazy" transform="rotate(30) translate(0 -136)"/>
+              <use href="#pm-kazy" transform="rotate(150) translate(0 -136)"/>
+              <use href="#pm-kazy" transform="rotate(270) translate(0 -136)"/>
+              <use href="#pm-egg" transform="rotate(90) translate(0 -140) rotate(20)"/>
+              <use href="#pm-egg" transform="rotate(210) translate(0 -140) rotate(-15)"/>
+              <use href="#pm-egg" transform="rotate(330) translate(0 -140) rotate(10)"/>
+              <!-- chili -->
+              <g transform="rotate(184) translate(0 -150) rotate(80)">
+                <path d="M-26 0 C-14 -10 14 -10 26 -3 C16 3 -8 8 -26 0Z" fill="#c62f22"/>
+                <path d="M-20 -3 C-8 -8 8 -8 18 -4" stroke="#e86a50" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+                <path d="M26 -3 C31 -5 33 -9 32 -13" stroke="#3d7a46" stroke-width="4" fill="none" stroke-linecap="round"/>
+              </g>
+              <!-- garlic -->
+              <g>
+                <g fill="#f3e6cb" stroke="#d8c39c" stroke-width="1.5">
+                  <ellipse cx="0" cy="-17" rx="12" ry="17"/>
+                  <ellipse cx="0" cy="-17" rx="12" ry="17" transform="rotate(60)"/>
+                  <ellipse cx="0" cy="-17" rx="12" ry="17" transform="rotate(120)"/>
+                  <ellipse cx="0" cy="-17" rx="12" ry="17" transform="rotate(180)"/>
+                  <ellipse cx="0" cy="-17" rx="12" ry="17" transform="rotate(240)"/>
+                  <ellipse cx="0" cy="-17" rx="12" ry="17" transform="rotate(300)"/>
+                </g>
+                <circle r="12" fill="#e9d6b0"/>
+                <circle r="5.5" fill="#a07a4c"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="prop prop--tea"><svg viewBox="0 0 120 120" focusable="false"><use href="#i-tea-top"/></svg></div>
+      <div class="prop prop--salad"><svg viewBox="0 0 64 64" focusable="false"><use href="#i-salad"/></svg></div>
+      <span class="spark spark--1"></span><span class="spark spark--2"></span><span class="spark spark--3"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Marquee ===== -->
+<div class="band" aria-hidden="true">
+  <svg class="band__ikat" focusable="false"><rect width="100%" height="100%" fill="url(#p-ikat)"/></svg>
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Ош</span><i></i><span>Самса из тандыра</span><i></i><span>Шашлык на углях</span><i></i><span>Лагман</span><i></i><span>Патыр-нон</span><i></i><span>Кук-чой</span><i></i><span>Ачичук</span><i></i><span>Мастава</span><i></i>
+      <span>Ош</span><i></i><span>Самса из тандыра</span><i></i><span>Шашлык на углях</span><i></i><span>Лагман</span><i></i><span>Патыр-нон</span><i></i><span>Кук-чой</span><i></i><span>Ачичук</span><i></i><span>Мастава</span><i></i>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Menu ===== -->
+<section class="section menu" id="menu" aria-labelledby="menu-title">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><span class="star" aria-hidden="true"></span>Меню</p>
+      <h2 class="h2" id="menu-title">Всё, что пахнет <em>зирой и&nbsp;дымом</em></h2>
+      <p class="sec-head__lead">Шесть разделов, всё готовим в день подачи. Добавляйте блюда в заказ — корзина работает, только без оплаты.</p>
+    </div>
+
+    <div class="tabs" data-reveal style="--d:120ms">
+      <div class="tabs__track" role="tablist" aria-label="Категории меню" id="tabs">
+        <span class="tabs__ink" aria-hidden="true"></span>
+        <button class="tab" type="button" role="tab" id="tab-plov" aria-controls="menu-panel" aria-selected="true" data-cat="plov">Плов</button>
+        <button class="tab" type="button" role="tab" id="tab-shashlik" aria-controls="menu-panel" aria-selected="false" tabindex="-1" data-cat="shashlik">Шашлык</button>
+        <button class="tab" type="button" role="tab" id="tab-samsa" aria-controls="menu-panel" aria-selected="false" tabindex="-1" data-cat="samsa">Самса и выпечка</button>
+        <button class="tab" type="button" role="tab" id="tab-soup" aria-controls="menu-panel" aria-selected="false" tabindex="-1" data-cat="soup">Супы</button>
+        <button class="tab" type="button" role="tab" id="tab-salad" aria-controls="menu-panel" aria-selected="false" tabindex="-1" data-cat="salad">Салаты</button>
+        <button class="tab" type="button" role="tab" id="tab-drinks" aria-controls="menu-panel" aria-selected="false" tabindex="-1" data-cat="drinks">Напитки</button>
+      </div>
+    </div>
+
+    <div class="menu__grid" id="menu-panel" role="tabpanel" aria-labelledby="tab-plov" tabindex="0" aria-live="polite"></div>
+    <noscript><p class="menu__noscript">Чтобы посмотреть меню и собрать заказ, включите JavaScript.</p></noscript>
+
+    <p class="menu__note" data-reveal>Цены и состав — для примера: это концепт сайта. Доставка бесплатно от 150&nbsp;000&nbsp;сум.</p>
+  </div>
+</section>
+
+<!-- ===== About / Why ===== -->
+<section class="section why" id="about" aria-labelledby="why-title">
+  <svg class="bg-pattern bg-pattern--why" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#p-girih-gold)"/></svg>
+  <div class="container">
+    <div class="sec-head sec-head--light" data-reveal>
+      <p class="eyebrow"><span class="star" aria-hidden="true"></span>Почему мы</p>
+      <h2 class="h2" id="why-title">Огонь, глина и <em>долгий чай</em></h2>
+      <p class="sec-head__lead">Мы не спешим там, где спешить нельзя: плов томится, тесто отдыхает, а чай заваривают трижды — «кайтарма».</p>
+    </div>
+
+    <div class="why__grid">
+      <article class="feat" data-reveal style="--d:0ms">
+        <div class="feat__art">
+          <svg viewBox="0 0 200 150" aria-hidden="true" focusable="false">
+            <g class="steam" transform="translate(0 -8)" fill="none" stroke="#f7efe1" stroke-width="3" stroke-linecap="round" opacity=".55">
+              <path d="M80 34c-8-8 8-12 0-22"/><path d="M100 30c-8-8 8-12 0-22"/><path d="M120 34c-8-8 8-12 0-22"/>
+            </g>
+            <rect x="38" y="112" width="124" height="30" rx="8" fill="#8b4a2b"/>
+            <path d="M38 126h124M70 112v14M110 112v14M90 126v16M130 126v16M56 126v16" stroke="#6d3820" stroke-width="2"/>
+            <g transform="translate(0 -12)">
+            <path d="M50 52q50-30 100 0z" fill="#e6b86a"/>
+            <g stroke="#fbe7b8" stroke-width="2.4" stroke-linecap="round"><path d="M72 46l5-1M90 40l5 1M108 39l5 1M125 45l4 2M98 48l4-1"/></g>
+            <g stroke="#e0672a" stroke-width="2.8" stroke-linecap="round"><path d="M80 47l6-3M115 43l6 2"/></g>
+            <circle cx="100" cy="36" r="7" fill="#f3e6cb" stroke="#d8c39c" stroke-width="1.4"/>
+            <path d="M44 56h112q-4 50-56 52-52-2-56-52z" fill="#1c262e"/>
+            <rect x="38" y="50" width="124" height="10" rx="5" fill="#2c3b46"/>
+            <path d="M58 66q8 30 34 36" stroke="#3f5260" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <rect x="26" y="54" width="16" height="6" rx="3" fill="#2c3b46"/><rect x="158" y="54" width="16" height="6" rx="3" fill="#2c3b46"/>
+            </g>
+            <g class="flames" transform="translate(100 118) scale(.78) translate(-100 -114)">
+              <path d="M72 114c-12-4-12-22 0-36 2 12 12 16 10 28-1 5-5 8-10 8z" fill="#c4512c"/>
+              <path d="M100 114c-14-5-14-26 0-42 3 14 14 18 12 32-1 6-6 10-12 10z" fill="#c4512c"/>
+              <path d="M128 114c-12-4-12-22 0-36 2 12 12 16 10 28-1 5-5 8-10 8z" fill="#c4512c"/>
+              <path d="M74 114c-7-3-7-13 0-22 2 7 7 10 6 16-.5 4-3 6-6 6z" fill="#e8b04b"/>
+              <path d="M100 114c-8-3-8-16 0-26 2 8 8 11 7 19-.5 4-3 7-7 7z" fill="#e8b04b"/>
+              <path d="M126 114c-7-3-7-13 0-22 2 7 7 10 6 16-.5 4-3 6-6 6z" fill="#e8b04b"/>
+            </g>
+          </svg>
+        </div>
+        <h3 class="feat__title">Казан на открытом огне</h3>
+        <p class="feat__text">Плов готовим в чугунном казане на дровах: зирвак томится не спеша, рис впитывает аромат мяса и моркови.</p>
+      </article>
+
+      <article class="feat" data-reveal style="--d:90ms">
+        <div class="feat__art">
+          <svg viewBox="0 0 200 150" aria-hidden="true" focusable="false">
+            <path d="M42 128V76q0-52 58-52t58 52v52z" fill="#c4683c"/>
+            <path d="M42 96h116M42 112h116" stroke="#b25a31" stroke-width="3"/>
+            <path d="M52 64q48-40 96 0" stroke="#d98257" stroke-width="3" fill="none" stroke-dasharray="2 7" stroke-linecap="round"/>
+            <ellipse cx="100" cy="72" rx="30" ry="20" fill="#2a160e"/>
+            <ellipse cx="100" cy="74" rx="24" ry="15" fill="url(#g-glow)" class="glow"/>
+            <ellipse cx="88" cy="70" rx="7" ry="5" fill="#e8b56c"/><ellipse cx="110" cy="68" rx="7" ry="5" fill="#e8b56c"/><ellipse cx="100" cy="80" rx="7" ry="4.5" fill="#dc9a4f"/>
+            <rect x="30" y="126" width="140" height="12" rx="6" fill="#8b4a2b"/>
+            <path d="M60 46q8-6 16-8" stroke="#e08c5e" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <g transform="translate(150 96) scale(.6)"><use href="#i-samsa" width="64" height="64"/></g>
+          </svg>
+        </div>
+        <h3 class="feat__title">Тандыр во дворе</h3>
+        <p class="feat__text">Самса и лепёшки пекутся на глиняных стенках тандыра — с хрустящей корочкой и лёгким запахом дыма.</p>
+      </article>
+
+      <article class="feat" data-reveal style="--d:180ms">
+        <div class="feat__art">
+          <svg viewBox="0 0 200 150" aria-hidden="true" focusable="false">
+            <ellipse cx="100" cy="124" rx="84" ry="16" fill="#8b4a2b"/>
+            <ellipse cx="100" cy="118" rx="84" ry="16" fill="#a65a35"/>
+            <ellipse cx="100" cy="118" rx="70" ry="11" fill="none" stroke="#e8b04b" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/>
+            <use href="#i-teapot" x="60" y="30" width="84" height="84"/>
+            <use href="#i-piyola" x="18" y="74" width="46" height="46"/>
+            <use href="#i-piyola" x="140" y="76" width="44" height="44"/>
+            <g fill="#f7efe1"><rect x="150" y="38" width="8" height="8" rx="1.5" transform="rotate(20 154 42)"/><rect x="162" y="44" width="7" height="7" rx="1.5" transform="rotate(-15 165 47)"/><rect x="154" y="52" width="6" height="6" rx="1.5"/></g>
+          </svg>
+        </div>
+        <h3 class="feat__title">Атмосфера чайханы</h3>
+        <p class="feat__text">Топчаны с подушками, зелёный чай в пиалах и неспешные разговоры — как в старой махалле.</p>
+      </article>
+
+      <article class="feat" data-reveal style="--d:270ms">
+        <div class="feat__art">
+          <svg viewBox="0 0 200 150" aria-hidden="true" focusable="false">
+            <path d="M34 72q0-24 26-30 26 6 26 30z" fill="#7b5a3a"/>
+            <g stroke="#a98058" stroke-width="2" stroke-linecap="round"><path d="M48 60l4-2M58 52l4 1M66 62l4-1M54 66l3 1"/></g>
+            <path d="M28 72h64q-4 36-32 38-28-2-32-38z" fill="#1b6a82"/>
+            <path d="M34 86h52" stroke="#49c0b6" stroke-width="3" stroke-dasharray="4 4"/>
+            <path d="M110 80q0-26 30-32 30 6 30 32z" fill="#b3262c"/>
+            <g fill="#e04a4a"><circle cx="128" cy="66" r="2.6"/><circle cx="140" cy="58" r="2.6"/><circle cx="152" cy="66" r="2.6"/><circle cx="136" cy="72" r="2.6"/><circle cx="148" cy="74" r="2.4"/><circle cx="122" cy="76" r="2.4"/></g>
+            <path d="M104 80h72q-4 38-36 40-32-2-36-40z" fill="#f7efe1"/>
+            <path d="M110 92h60" stroke="#c4512c" stroke-width="3"/>
+            <g fill="#c4512c"><circle cx="122" cy="102" r="3"/><circle cx="140" cy="106" r="3"/><circle cx="158" cy="102" r="3"/></g>
+            <path d="M68 134q20-8 64-2" stroke="#7b5a3a" stroke-width="0"/>
+            <g fill="#7b5a3a"><ellipse cx="72" cy="128" rx="4" ry="1.6" transform="rotate(20 72 128)"/><ellipse cx="84" cy="134" rx="4" ry="1.6" transform="rotate(-10 84 134)"/><ellipse cx="96" cy="126" rx="4" ry="1.6" transform="rotate(40 96 126)"/></g>
+            <g fill="#b3262c"><circle cx="106" cy="134" r="2.4"/><circle cx="114" cy="128" r="2.4"/></g>
+            <path d="M176 36c-10 2-16 10-14 22 10-2 16-10 14-22z" fill="#3d8a5a"/>
+            <path d="M176 36c-6 8-10 14-14 22" stroke="#2d6b45" stroke-width="1.6" fill="none"/>
+          </svg>
+        </div>
+        <h3 class="feat__title">Специи с базара</h3>
+        <p class="feat__text">Зиру, барбарис и красный перец выбираем на базаре, а морковь режем соломкой вручную — только ножом.</p>
+      </article>
+    </div>
+
+    <div class="day" data-reveal>
+      <h3 class="day__title">Один день казана</h3>
+      <ol class="day__list">
+        <li><time>06:30</time><b>Базар</b><span>Свежая баранина, жёлтая и красная морковь, рис девзира.</span></li>
+        <li><time>09:00</time><b>Нарезка</b><span>Морковь — соломкой, вручную. Никаких комбайнов.</span></li>
+        <li><time>10:30</time><b>Зирвак</b><span>Мясо, лук и морковь томятся в масле — основа вкуса.</span></li>
+        <li><time>12:00</time><b>Первый ляган</b><span>Плов готов. Подаём, пока не закончится казан.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Booking ===== -->
+<section class="section booking" id="booking" aria-labelledby="booking-title">
+  <svg class="bg-pattern bg-pattern--booking" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#p-girih-terra)"/></svg>
+  <div class="container booking__grid">
+    <div class="booking__intro" data-reveal>
+      <p class="eyebrow"><span class="star" aria-hidden="true"></span>Бронь стола</p>
+      <h2 class="h2" id="booking-title">Забронируйте <em>топчан</em> или&nbsp;стол</h2>
+      <p class="sec-head__lead">День рождения, большой семейный обед или просто ужин с друзьями — выберите место в зале, на террасе или на топчане. Администратор перезвонит, чтобы подтвердить бронь.</p>
+      <div class="booking__art" aria-hidden="true">
+        <svg viewBox="0 0 360 260" focusable="false">
+          <defs><clipPath id="clip-arch"><path d="M40 260V120Q40 20 180 20T320 120V260z"/></clipPath></defs>
+          <path d="M40 260V120Q40 20 180 20T320 120V260z" fill="#0f2a3f"/>
+          <g clip-path="url(#clip-arch)">
+            <rect width="360" height="260" fill="url(#p-girih-gold)" opacity=".22"/>
+            <circle cx="180" cy="120" r="70" fill="#e8b04b" opacity=".16"/>
+            <rect x="0" y="206" width="360" height="54" fill="#8b4a2b"/>
+            <rect x="0" y="200" width="360" height="12" fill="url(#p-ikat)"/>
+          </g>
+          <path d="M40 260V120Q40 20 180 20T320 120V260" fill="none" stroke="#e8b04b" stroke-width="3"/>
+          <path d="M54 260V122Q54 34 180 34T306 122V260" fill="none" stroke="#e8b04b" stroke-width="1" opacity=".5"/>
+          <use href="#i-teapot" x="118" y="76" width="130" height="130"/>
+          <use href="#i-piyola" x="66" y="150" width="60" height="60"/>
+          <use href="#i-piyola" x="236" y="152" width="58" height="58"/>
+          <use href="#i-non" x="262" y="214" width="70" height="70"/>
+        </svg>
+        <ul class="booking__tags">
+          <li>Зал</li><li>Терраса</li><li>Топчаны</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="booking__card" data-reveal style="--d:120ms">
+      <form class="form" id="bookingForm" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-name">Имя</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться" required minlength="2" aria-describedby="e-name">
+            <p class="field__err" id="e-name" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Телефон</label>
+            <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 (__) ___-__-__" required aria-describedby="e-phone">
+            <p class="field__err" id="e-phone" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label for="f-date">Дата</label>
+            <input id="f-date" name="date" type="date" required aria-describedby="e-date">
+            <p class="field__err" id="e-date" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-time">Время</label>
+            <div class="select">
+              <select id="f-time" name="time" required aria-describedby="e-time">
+                <option value="">Выберите время</option>
+              </select>
+              <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <p class="field__err" id="e-time" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <div class="form__row form__row--guests">
+          <div class="field">
+            <span class="field__label" id="l-guests">Гостей</span>
+            <div class="stepper" role="group" aria-labelledby="l-guests">
+              <button type="button" class="stepper__btn" data-step="-1" aria-label="Меньше гостей">
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </button>
+              <output class="stepper__val" id="guestsOut" aria-live="polite">2</output>
+              <button type="button" class="stepper__btn" data-step="1" aria-label="Больше гостей">
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </button>
+              <input type="hidden" name="guests" id="f-guests" value="2">
+            </div>
+          </div>
+          <fieldset class="field chips">
+            <legend class="field__label">Где сидеть</legend>
+            <div class="chips__list">
+              <label class="chip"><input type="radio" name="place" value="Зал" checked><span>Зал</span></label>
+              <label class="chip"><input type="radio" name="place" value="Терраса"><span>Терраса</span></label>
+              <label class="chip"><input type="radio" name="place" value="Топчан"><span>Топчан</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="field">
+          <label for="f-comment">Комментарий <span class="field__opt">— необязательно</span></label>
+          <textarea id="f-comment" name="comment" rows="3" maxlength="300" placeholder="Например: детский стул, отмечаем день рождения" aria-describedby="c-count"></textarea>
+          <p class="field__hint" id="c-count"><span data-count>0</span> / 300</p>
+        </div>
+
+        <button class="btn btn--terra btn--lg btn--block" type="submit">
+          Забронировать стол
+          <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h11M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form__demo">Это демо: данные никуда не отправляются.</p>
+      </form>
+
+      <div class="success" id="bookingSuccess" hidden tabindex="-1">
+        <svg class="success__icon" viewBox="0 0 80 80" aria-hidden="true" focusable="false">
+          <circle cx="40" cy="40" r="36" fill="none" stroke="#e8b04b" stroke-width="4"/>
+          <path class="success__tick" d="M24 41l11 11 21-23" fill="none" stroke="#0f2a3f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3 class="success__title">Заявка принята</h3>
+        <p class="success__text" id="successText"></p>
+        <p class="success__note">Это демо — на реальном сайте заявка придёт администратору, и он перезвонит для подтверждения.</p>
+        <button class="btn btn--ink" type="button" id="bookingAgain">Новая бронь</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Info / contacts ===== -->
+<section class="section info" id="contacts" aria-labelledby="info-title">
+  <div class="container">
+    <div class="sec-head" data-reveal>
+      <p class="eyebrow"><span class="star" aria-hidden="true"></span>Как нас найти</p>
+      <h2 class="h2" id="info-title">Ждём в гости <em>каждый день</em></h2>
+    </div>
+
+    <div class="info__grid">
+      <div class="info__cards">
+        <article class="icard" data-reveal>
+          <div class="icard__head">
+            <h3>Часы работы</h3>
+            <span class="status" id="openStatus"><i aria-hidden="true"></i><span>Ежедневно</span></span>
+          </div>
+          <dl class="hours">
+            <div><dt>Пн — Вс</dt><dd>10:00 — 23:00</dd></div>
+            <div><dt>Кухня</dt><dd>до 22:30</dd></div>
+            <div><dt>Плов</dt><dd>с 12:00, пока есть в казане</dd></div>
+          </dl>
+        </article>
+        <article class="icard" data-reveal style="--d:80ms">
+          <h3>Адрес и телефон</h3>
+          <p class="icard__big">Ташкент, ул. Примерная, 1</p>
+          <p><a class="link" href="tel:+998000000000">+998 (00) 000-00-00</a></p>
+          <p class="icard__muted">Адрес и номер — заглушки для концепта.</p>
+        </article>
+        <article class="icard icard--accent" data-reveal style="--d:160ms">
+          <h3>Доставка</h3>
+          <p>Привезём горячим за 45–60 минут в пределах города. Плов — в термобоксе, чай — в термосе.</p>
+          <p class="icard__muted">Бесплатно от 150&nbsp;000 сум, иначе — 15&nbsp;000 сум.</p>
+        </article>
+      </div>
+
+      <div class="map" data-reveal style="--d:120ms">
+        <svg viewBox="0 0 640 480" role="img" aria-labelledby="map-t" focusable="false">
+          <title id="map-t">Схематичная карта: ресторан на ул. Примерная, 1</title>
+          <rect width="640" height="480" fill="#efe2c9"/>
+          <!-- blocks -->
+          <g fill="#e6d4b4">
+            <rect x="24" y="24" width="150" height="110" rx="14"/><rect x="200" y="24" width="120" height="110" rx="14"/>
+            <rect x="24" y="170" width="150" height="120" rx="14"/><rect x="24" y="326" width="150" height="130" rx="14"/>
+            <rect x="200" y="326" width="170" height="130" rx="14"/><rect x="400" y="24" width="216" height="90" rx="14"/>
+            <rect x="460" y="300" width="156" height="156" rx="14"/>
+          </g>
+          <!-- park -->
+          <rect x="200" y="170" width="120" height="120" rx="14" fill="#cfe4d8"/>
+          <g fill="#8fc6b3"><circle cx="228" cy="200" r="11"/><circle cx="262" cy="196" r="9"/><circle cx="294" cy="210" r="12"/><circle cx="236" cy="246" r="12"/><circle cx="276" cy="256" r="10"/><circle cx="300" cy="266" r="8"/></g>
+          <!-- canal -->
+          <path d="M650 150 C560 170 520 230 440 250 S 360 300 380 480" fill="none" stroke="#9ed8d0" stroke-width="30"/>
+          <path d="M650 150 C560 170 520 230 440 250 S 360 300 380 480" fill="none" stroke="#bfe6e0" stroke-width="8" stroke-dasharray="14 18" stroke-linecap="round" class="map__water"/>
+          <!-- roads -->
+          <g fill="none" stroke="#fbf6ec" stroke-linecap="round">
+            <path d="M0 152 H640" stroke-width="22"/>
+            <path d="M187 0 V480" stroke-width="22"/>
+            <path d="M0 308 H440" stroke-width="16"/>
+            <path d="M385 0 V140" stroke-width="16"/>
+          </g>
+          <path d="M196 152 H640" fill="none" stroke="#e8b04b" stroke-width="2" stroke-dasharray="12 12" opacity=".7"/>
+          <path d="M187 0 V480" fill="none" stroke="#e8b04b" stroke-width="2" stroke-dasharray="12 12" opacity=".5"/>
+          <text x="30" y="157" font-family="Manrope, sans-serif" font-size="13" font-weight="700" fill="#8a7454" letter-spacing="1.5">УЛ. ПРИМЕРНАЯ</text>
+          <text x="227" y="298" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#4d8f79" letter-spacing="1">СКВЕР</text>
+          <text x="470" y="294" font-family="Manrope, sans-serif" font-size="12" font-weight="700" fill="#3c9a90" letter-spacing="1" transform="rotate(-20 470 294)">КАНАЛ</text>
+          <!-- restaurant block -->
+          <rect x="400" y="170" width="120" height="70" rx="14" fill="#f3c98a"/>
+          <rect x="400" y="170" width="120" height="70" rx="14" fill="url(#p-girih-terra)" opacity=".35"/>
+          <!-- pin -->
+          <g transform="translate(460 196)">
+            <circle r="34" fill="#c4512c" opacity=".18" class="map__pulse"/>
+            <ellipse cx="0" cy="6" rx="12" ry="4" fill="#0f2a3f" opacity=".25"/>
+            <path d="M0 4 C-6 -8 -22 -18 -22 -36 A22 22 0 0 1 22 -36 C22 -18 6 -8 0 4Z" fill="#c4512c"/>
+            <circle cy="-36" r="11" fill="#f7efe1"/>
+            <rect x="-5" y="-41" width="10" height="10" fill="#e8b04b"/>
+            <polygon points="0,-43 7,-36 0,-29 -7,-36" fill="#e8b04b"/>
+          </g>
+          <g transform="translate(460 104)">
+            <rect x="-86" y="-22" width="172" height="40" rx="20" fill="#0f2a3f"/>
+            <text y="4" text-anchor="middle" font-family="Manrope, sans-serif" font-size="14" font-weight="800" fill="#f7efe1">Oshxona Navro‘z</text>
+            <path d="M-8 18 L0 28 L8 18Z" fill="#0f2a3f"/>
+          </g>
+          <!-- compass -->
+          <g transform="translate(590 420)">
+            <circle r="26" fill="#fbf6ec" stroke="#e6d4b4" stroke-width="2"/>
+            <polygon points="0,-18 6,0 0,18 -6,0" fill="#e6d4b4"/>
+            <polygon points="0,-18 6,0 -6,0" fill="#c4512c"/>
+            <text y="-30" text-anchor="middle" font-family="Manrope, sans-serif" font-size="11" font-weight="800" fill="#8a7454" dy="-2">С</text>
+          </g>
+        </svg>
+        <p class="map__caption">Схема условная — это концепт</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <svg class="band__ikat band__ikat--footer" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#p-ikat)"/></svg>
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a class="logo" href="#hero" aria-label="Oshxona Navro‘z — наверх">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect x="10" y="10" width="20" height="20" fill="#e8b04b"/>
+          <polygon points="20,5.9 34.1,20 20,34.1 5.9,20" fill="#e8b04b"/>
+          <circle cx="20" cy="20" r="6" fill="#0f2a3f"/><circle cx="20" cy="20" r="2.4" fill="#e8b04b"/>
+        </svg>
+        <span class="logo__txt"><span>Oshxona</span> <em>Navro‘z</em></span>
+      </a>
+      <p>Чайхана и узбекская кухня в Ташкенте. Плов из казана, самса из тандыра и чай, который хочется наливать ещё.</p>
+    </div>
+    <nav class="footer__col" aria-label="Разделы сайта">
+      <h3>Разделы</h3>
+      <ul><li><a href="#menu">Меню</a></li><li><a href="#about">Атмосфера</a></li><li><a href="#booking">Бронь стола</a></li><li><a href="#contacts">Контакты</a></li></ul>
+    </nav>
+    <div class="footer__col">
+      <h3>Контакты</h3>
+      <ul><li>Ташкент, ул. Примерная, 1</li><li><a href="tel:+998000000000">+998 (00) 000-00-00</a></li><li>Ежедневно 10:00–23:00</li></ul>
+    </div>
+    <div class="footer__col">
+      <h3>Соцсети</h3>
+      <ul><li><a href="#" data-demo-link>Telegram</a></li><li><a href="#" data-demo-link>Instagram</a></li></ul>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <p>© <span id="year">2026</span> Oshxona Navro‘z — вымышленный ресторан. Все данные — заглушки.</p>
+    <p>Концепт-дизайн: <a href="/">SAJA BOYS</a></p>
+  </div>
+</footer>
+
+<!-- ===== Floating UI ===== -->
+<button class="cart-pill" type="button" id="cartPill" aria-haspopup="dialog" aria-controls="cart" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 8h13l-1.1 11.2a2 2 0 0 1-2 1.8H8.6a2 2 0 0 1-2-1.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 10V7a3 3 0 0 1 6 0v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  <span class="cart-pill__label">Заказ</span>
+  <span class="cart-pill__count" data-cart-count>0</span>
+  <span class="cart-pill__sum" data-cart-sum>0 сум</span>
+</button>
+
+<dialog class="sheet" id="cart" aria-labelledby="cart-title">
+  <div class="sheet__inner">
+    <div class="sheet__head">
+      <h2 id="cart-title">Ваш заказ</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Закрыть корзину">
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div class="sheet__body">
+      <ul class="cart-list" id="cartList"></ul>
+      <div class="cart-empty" id="cartEmpty">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><use href="#i-lagan"/></svg>
+        <p><b>Ляган пока пуст</b></p>
+        <p>Добавьте блюда из меню — плов, самсу или чайник чая.</p>
+        <button class="btn btn--ink" type="button" data-close data-goto="#menu">Открыть меню</button>
+      </div>
+    </div>
+    <div class="sheet__foot" id="cartFoot">
+      <dl class="totals">
+        <div><dt>Блюда</dt><dd id="tSub">0 сум</dd></div>
+        <div><dt>Доставка</dt><dd id="tDel">0 сум</dd></div>
+        <div class="totals__sum"><dt>Итого</dt><dd id="tTotal">0 сум</dd></div>
+      </dl>
+      <p class="totals__hint" id="tHint"></p>
+      <button class="btn btn--gold btn--lg btn--block" type="button" id="checkout">Оформить доставку</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 13l12-9" stroke="currentColor" stroke-width="1.8"/></svg>
+  <span id="toastText"></span>
+</div>
+
+<a class="studio-badge" href="/">
+  <span class="studio-badge__dot" aria-hidden="true"></span>
+  Концепт-дизайн · <b>SAJA BOYS</b>
+</a>
+
+<script src="app.js" defer></script>
+</body>
+</html>
