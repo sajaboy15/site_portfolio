@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Burger Lab — сочные бургеры с доставкой по Ташкенту (концепт)</title>
+<meta name="description" content="Концепт сайта доставки бургеров с онлайн-заказом: меню, корзина, оформление заказа. Дизайн и разработка — студия SAJA BOYS.">
+<meta name="theme-color" content="#ffd23f">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Cpath d='M12 30c0-10 9-16 20-16s20 6 20 16z' fill='%23ffd23f'/%3E%3Crect x='10' y='33' width='44' height='7' rx='3.5' fill='%23e63b2e'/%3E%3Cpath d='M12 43h40v3c0 3-2 5-5 5H17c-3 0-5-2-5-5z' fill='%23ffd23f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/demos/burger-lab/style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#menu">Перейти к меню</a>
+
+<header class="header" id="top">
+  <div class="wrap">
+    <a class="logo" href="#hero" aria-label="Burger Lab — на главную">
+      <svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#111"/><path d="M11 31c0-10.5 9.4-17 21-17s21 6.5 21 17z" fill="#ffd23f"/><ellipse cx="24" cy="22" rx="2.2" ry="1.2" fill="#111"/><ellipse cx="33" cy="19" rx="2.2" ry="1.2" fill="#111"/><ellipse cx="41" cy="24" rx="2.2" ry="1.2" fill="#111"/><path d="M9 34h46v3c-4 0-4 4-8 4s-4-4-8-4-4 4-8 4-4-4-8-4-4 4-8 4-4-4-6-4z" fill="#e63b2e"/><path d="M11 43h42v2c0 4-3 7-7 7H18c-4 0-7-3-7-7z" fill="#ffd23f"/></svg>
+      <span>Burger<b>Lab</b></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <ul>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#how">Как мы работаем</a></li>
+        <li><a href="#delivery">Доставка</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+    <a class="header-phone" href="tel:+998000000000">+998 (00) 000-00-00</a>
+    <button class="cart-btn" id="cartBtn" type="button" aria-haspopup="dialog" aria-controls="cart" aria-label="Открыть корзину, товаров: 0">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.1a2 2 0 0 1-2 1.9H8.2a2 2 0 0 1-2-1.9z"/><path d="M9 10V7a3 3 0 0 1 6 0v3"/></svg>
+      <span class="cart-sum" id="cartSum">Корзина</span>
+      <span class="cart-count" id="cartCount" aria-hidden="true">0</span>
+    </button>
+    <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-controls="nav" aria-expanded="false" aria-label="Открыть меню навигации">
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow fade-up"><span class="dot" aria-hidden="true"></span>Доставка по Ташкенту · ежедневно 10:00–03:00</p>
+        <h1 id="heroTitle">
+          <span class="line"><span>Сочные</span></span>
+          <span class="line"><span>бургеры</span></span>
+          <span class="tag-time"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M9 2h6"/></svg>за 30 минут</span>
+        </h1>
+        <p class="hero-lead fade-up">Котлеты из говядины жарим на гриле прямо перед отправкой, булочки бриошь печём каждое утро. Курьер привезёт заказ горячим — в термосумке.</p>
+        <div class="hero-cta fade-up">
+          <a class="btn btn--red btn--lg" href="#menu">Заказать <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost btn--lg" href="#delivery">Условия доставки</a>
+        </div>
+        <ul class="hero-facts fade-up" aria-label="Коротко о доставке">
+          <li><b>30 мин</b><span>среднее время доставки</span></li>
+          <li><b>0 сум</b><span>доставка от 120 000 сум</span></li>
+          <li><b>до 03:00</b><span>принимаем заказы каждый день</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" id="heroArt">
+        <div class="rays" aria-hidden="true"></div>
+        <div class="blob" aria-hidden="true"></div>
+        <svg class="sticker" viewBox="0 0 140 140" aria-hidden="true">
+          <circle cx="70" cy="70" r="66" fill="#fff"/>
+          <circle cx="70" cy="70" r="66" fill="none" stroke="#111" stroke-width="3"/>
+          <defs><path id="stickerPath" d="M70 70 m-48 0 a48 48 0 1 1 96 0 a48 48 0 1 1 -96 0"/></defs>
+          <g class="ring"><text><textPath href="#stickerPath">ГОРЯЧЕЕ • СОЧНОЕ • СВЕЖЕЕ • </textPath></text></g>
+          <circle cx="70" cy="70" r="24" fill="#e63b2e"/>
+          <path d="M60 71c0-6 4.5-9.5 10-9.5s10 3.5 10 9.5z" fill="#ffd23f"/><rect x="58" y="73" width="24" height="4" rx="2" fill="#111"/><path d="M60 79h20v1.5c0 2-1.5 3.5-3.5 3.5h-13c-2 0-3.5-1.5-3.5-3.5z" fill="#ffd23f"/>
+        </svg>
+        <div class="float float-a" aria-hidden="true" data-depth="40"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="32" fill="#e63b2e"/><circle cx="40" cy="40" r="25" fill="#ff7b62"/><path d="M40 18v44M18 40h44M24 24l32 32M56 24 24 56" stroke="#e63b2e" stroke-width="3"/><circle cx="40" cy="40" r="6" fill="#e63b2e"/><g fill="#ffe2b0"><ellipse cx="30" cy="30" rx="2.5" ry="4" transform="rotate(-45 30 30)"/><ellipse cx="50" cy="30" rx="2.5" ry="4" transform="rotate(45 50 30)"/><ellipse cx="30" cy="50" rx="2.5" ry="4" transform="rotate(45 30 50)"/><ellipse cx="50" cy="50" rx="2.5" ry="4" transform="rotate(-45 50 50)"/></g></svg></div>
+        <div class="float float-b" aria-hidden="true" data-depth="70"><svg viewBox="0 0 80 80"><ellipse cx="40" cy="40" rx="32" ry="20" fill="#86b33a" stroke="#4f7d1c" stroke-width="4" transform="rotate(-20 40 40)"/><g fill="#d6ec9a"><circle cx="30" cy="42" r="3"/><circle cx="40" cy="36" r="3"/><circle cx="50" cy="32" r="3"/><circle cx="42" cy="47" r="3"/></g></svg></div>
+        <div class="float float-c" aria-hidden="true" data-depth="25"><svg viewBox="0 0 60 60"><rect x="22" y="4" width="16" height="52" rx="4" fill="#ffcf4a" transform="rotate(24 30 30)"/><rect x="33" y="4" width="5" height="52" rx="2.5" fill="#efaa2a" transform="rotate(24 30 30)"/></svg></div>
+        <div class="float float-d" aria-hidden="true" data-depth="55"><svg viewBox="0 0 30 30"><ellipse cx="15" cy="15" rx="12" ry="6" fill="#fff3d1" transform="rotate(-30 15 15)"/></svg></div>
+        <svg class="hero-burger" id="heroBurger" viewBox="0 0 480 500" role="img" aria-label="Иллюстрация: бургер в разобранном виде — булочка с кунжутом, салат, томаты, чеддер, говяжья котлета, соус"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="marquee" aria-label="Акции">
+    <div class="band band-red"><div class="band-track" data-marquee></div><div class="band-track" data-marquee aria-hidden="true"></div></div>
+    <div class="band band-yellow" aria-hidden="true"><div class="band-track" data-marquee2></div><div class="band-track" data-marquee2></div></div>
+  </section>
+
+  <!-- MENU -->
+  <section class="section menu-section" id="menu" aria-labelledby="menuTitle">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Меню</span>
+          <h2 class="section-title" id="menuTitle">Что сегодня<br>на гриле</h2>
+        </div>
+        <p class="section-sub">Добавляйте в корзину — оформление заказа займёт меньше минуты. Соусы к бургерам можно взять отдельно.</p>
+      </div>
+      <div class="filters-bar">
+        <div class="filters" id="filters" role="toolbar" aria-label="Категории меню"></div>
+      </div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+      <p class="menu-note">Изображения — иллюстрации. Вес и калорийность указаны для примера.</p>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="section how" id="how" aria-labelledby="howTitle">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="kicker">Как мы работаем</span>
+          <h2 class="section-title" id="howTitle">Три шага<br>до бургера</h2>
+        </div>
+        <p class="section-sub">Без звонков и ожидания оператора: заказ сразу попадает на кухню, а вы видите его статус.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num" aria-hidden="true">01</span>
+          <div class="step-ill" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><rect x="34" y="12" width="52" height="96" rx="12" fill="#111"/><rect x="39" y="22" width="42" height="74" rx="5" fill="#fff"/><path d="M46 52c0-9 6.5-13 14-13s14 4 14 13z" fill="#f2a93b"/><g fill="#fff3d1"><ellipse cx="54" cy="45" rx="1.8" ry="1"/><ellipse cx="61" cy="42" rx="1.8" ry="1"/><ellipse cx="67" cy="46" rx="1.8" ry="1"/></g><path d="M44 54h32l-2 3-3-2-3 2-3-2-3 2-3-2-3 2-3-2-3 2z" fill="#5cc23c"/><rect x="45" y="57" width="30" height="7" rx="3.5" fill="#6a321d"/><path d="M46 66h28v2c0 2.5-2 4-4 4H50c-2 0-4-1.5-4-4z" fill="#f2a93b"/><rect x="45" y="80" width="30" height="10" rx="5" fill="#e63b2e"/><path d="M57 85h6M60 82v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/><path d="M82 70c6 3 10 9 10 16l-1 12H76l-6-12c-1.5-3 2-5.5 4.5-3.5L78 86V66c0-3 4-3 4 0z" fill="#ffd8b0" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Выбираете</h3>
+          <p>Собираете заказ на сайте: бургеры, комбо, закуски и соусы. Оплата наличными, картой, через Payme или Click.</p>
+          <span class="pill">1 минута</span>
+        </li>
+        <li class="step reveal" style="--rd:.08s">
+          <span class="step-num" aria-hidden="true">02</span>
+          <div class="step-ill" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><path d="M40 30c0-6 6-8 6-14M58 28c0-6 6-8 6-14M76 30c0-6 6-8 6-14" stroke="#111" stroke-width="3.5" fill="none" stroke-linecap="round" opacity=".5"/><rect x="22" y="40" width="76" height="18" rx="9" fill="#6a321d"/><rect x="30" y="43" width="60" height="4" rx="2" fill="#8a4a2b"/><path d="M36 52l8-8M52 52l8-8M68 52l8-8" stroke="#3f1a0f" stroke-width="3" stroke-linecap="round"/><path d="M16 66h88" stroke="#111" stroke-width="5" stroke-linecap="round"/><path d="M24 74h72" stroke="#111" stroke-width="3" stroke-linecap="round" opacity=".5"/><path d="M34 106c-8-6-6-18 2-24 0 6 4 8 6 8-2-8 4-16 12-18-2 8 4 12 8 14 2-6 8-8 12-8-3 6 4 10 6 16 2 6-2 10-6 12z" fill="#e63b2e"/><path d="M46 106c-4-4-3-10 2-13 0 4 3 5 5 5-1-5 3-9 7-10-1 5 3 8 5 9 1-3 4-5 7-5-2 4 3 7 3 10s-2 4-4 4z" fill="#ffd23f"/></svg>
+          </div>
+          <h3>Готовим</h3>
+          <p>Повар получает заказ мгновенно. Жарим котлету, собираем бургер и упаковываем — около 12–15 минут.</p>
+          <span class="pill">≈ 15 минут</span>
+        </li>
+        <li class="step reveal" style="--rd:.16s">
+          <span class="step-num" aria-hidden="true">03</span>
+          <div class="step-ill" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><path d="M8 52h18M4 62h16M10 72h12" stroke="#111" stroke-width="3.5" stroke-linecap="round" opacity=".45"/><rect x="28" y="34" width="34" height="30" rx="5" fill="#e63b2e"/><rect x="28" y="34" width="34" height="8" rx="4" fill="#c22c21"/><text x="45" y="58" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="11" fill="#ffd23f">BL</text><path d="M30 68h44l10-22h8l-10 26H36c-4 0-6-2-6-4z" fill="#111"/><path d="M84 46l6-14h8" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M62 72c0-8 6-12 12-12h14c6 0 10 6 10 12z" fill="#e63b2e"/><circle cx="38" cy="84" r="12" fill="#111"/><circle cx="38" cy="84" r="5" fill="#fff"/><circle cx="90" cy="84" r="12" fill="#111"/><circle cx="90" cy="84" r="5" fill="#fff"/></svg>
+          </div>
+          <h3>Привозим</h3>
+          <p>Курьер забирает заказ сразу с кухни и везёт его в термосумке. Среднее время в центре города — 30 минут.</p>
+          <span class="pill">≈ 30 минут</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- DELIVERY -->
+  <section class="section delivery" id="delivery" aria-labelledby="deliveryTitle">
+    <div class="wrap delivery-grid">
+      <div class="map-col reveal">
+        <figure class="map-card" style="margin:0">
+          <svg id="map" viewBox="0 0 560 440" role="img" aria-label="Схема зон доставки: зона 1 в радиусе 5 км от кухни, зона 2 — от 5 до 10 км"></svg>
+          <figcaption class="map-legend">
+            <span><i style="background:#e63b2e"></i>Зона 1 — до 5 км</span>
+            <span><i style="background:#111"></i>Зона 2 — 5–10 км</span>
+            <span><i style="background:#ffd23f;box-shadow:inset 0 0 0 2px #111"></i>Кухня Burger Lab</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="reveal" style="--rd:.08s">
+        <span class="kicker" style="color:#111">Доставка</span>
+        <h2 class="section-title" id="deliveryTitle">Везём<br>по Ташкенту</h2>
+        <p class="section-sub" style="color:#3d3628">Стоимость доставки — 12 000 сум. При заказе от 120 000 сум доставим бесплатно.</p>
+        <ul class="info-list">
+          <li class="info">
+            <span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <div><h3>Зоны и время</h3>
+              <ul class="zones">
+                <li><span>Зона 1 · до 5 км</span><b>25–35 мин</b></li>
+                <li><span>Зона 2 · 5–10 км</span><b>35–50 мин</b></li>
+                <li><span>Дальше 10 км</span><b>по согласованию</b></li>
+              </ul>
+            </div>
+          </li>
+          <li class="info">
+            <span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><h3>Часы работы</h3><p>Ежедневно с 10:00 до 03:00, без выходных. Последний заказ — в 02:30.</p></div>
+          </li>
+          <li class="info">
+            <span class="info-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg></span>
+            <div><h3>Оплата</h3><p>Наличными или картой курьеру, онлайн через Payme и Click.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="contacts">
+  <div class="wrap">
+    <div class="footer-cta reveal">
+      <h2>Проголодались?<br>Мы уже греем гриль.</h2>
+      <a class="btn btn--yellow btn--lg" href="#menu">Открыть меню <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-brand">
+        <a class="logo" href="#hero"><svg class="logo-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="18" fill="#ffd23f"/><path d="M11 31c0-10.5 9.4-17 21-17s21 6.5 21 17z" fill="#111"/><path d="M9 34h46v3c-4 0-4 4-8 4s-4-4-8-4-4 4-8 4-4-4-8-4-4 4-8 4-4-4-6-4z" fill="#e63b2e"/><path d="M11 43h42v2c0 4-3 7-7 7H18c-4 0-7-3-7-7z" fill="#111"/></svg><span>Burger<b>Lab</b></span></a>
+        <p>Бургерная с доставкой по Ташкенту. Концепт онлайн-заказа: меню, корзина и оформление в пару касаний.</p>
+      </div>
+      <div>
+        <h3>Меню</h3>
+        <ul>
+          <li><a href="#menu" data-filter-link="burgers">Бургеры</a></li>
+          <li><a href="#menu" data-filter-link="combo">Комбо</a></li>
+          <li><a href="#menu" data-filter-link="snacks">Закуски</a></li>
+          <li><a href="#menu" data-filter-link="drinks">Напитки</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Информация</h3>
+        <ul>
+          <li><a href="#how">Как мы работаем</a></li>
+          <li><a href="#delivery">Доставка и оплата</a></li>
+          <li><a href="#delivery">Часы работы</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul>
+          <li><a href="tel:+998000000000">+998 (00) 000-00-00</a></li>
+          <li>Telegram-бот для заказов</li>
+          <li>Ежедневно 10:00–03:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Burger Lab — концепт-дизайн. Ресторан вымышленный, заказы не принимаются.</span>
+      <span>Дизайн и разработка — <a href="/">SAJA BOYS</a></span>
+    </div>
+    <div class="footer-giant" aria-hidden="true">BURGER LAB</div>
+  </div>
+</footer>
+
+<a class="studio-badge" href="/"><i aria-hidden="true"></i>Концепт-дизайн · <b>SAJA BOYS</b></a>
+
+<button class="cart-bar" id="cartBar" type="button" aria-controls="cart" tabindex="-1" aria-hidden="true">
+  <span id="cartBarText">Корзина</span>
+  <span class="go">Оформить <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+</button>
+
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+<aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+  <div class="drawer-head">
+    <button class="icon-btn back" id="backBtn" type="button" aria-label="Назад к корзине" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    </button>
+    <h2 id="cartTitle">Корзина</h2>
+    <button class="icon-btn" id="closeBtn" type="button" aria-label="Закрыть корзину">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+
+  <section class="view view-cart" data-view="cart" aria-label="Состав заказа">
+    <div class="view-scroll">
+      <div class="ship" id="ship"></div>
+      <ul class="cart-list" id="cartList"></ul>
+      <div class="empty" id="cartEmpty" hidden>
+        <svg viewBox="0 0 160 160" aria-hidden="true"><circle cx="80" cy="84" r="64" fill="#ffd23f"/><path d="M44 62h72l-6 66a8 8 0 0 1-8 7H58a8 8 0 0 1-8-7z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/><path d="M62 70V54a18 18 0 0 1 36 0v16" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/><circle cx="68" cy="94" r="4" fill="#111"/><circle cx="92" cy="94" r="4" fill="#111"/><path d="M70 114q10-8 20 0" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/></svg>
+        <h3>Пока пусто</h3>
+        <p>Загляните в меню — там бургеры, комбо и шейки.</p>
+        <button class="btn btn--red" type="button" id="toMenuBtn">Перейти в меню</button>
+      </div>
+    </div>
+    <div class="view-foot" id="cartFoot">
+      <div class="sum-rows" id="sumRows"></div>
+      <button class="btn btn--red btn--block btn--lg" type="button" id="checkoutBtn">Оформить заказ <span class="arr" aria-hidden="true">→</span></button>
+    </div>
+  </section>
+
+  <section class="view view-checkout" data-view="checkout" aria-label="Оформление заказа" hidden>
+    <form class="view-form" id="orderForm" novalidate>
+      <div class="view-scroll form">
+        <div class="field" data-field="name">
+          <label for="fName">Имя</label>
+          <input id="fName" name="name" type="text" autocomplete="given-name" placeholder="Как к вам обращаться" required aria-describedby="eName">
+          <span class="err" id="eName">Введите имя — хотя бы 2 буквы</span>
+        </div>
+        <div class="field" data-field="phone">
+          <label for="fPhone">Телефон</label>
+          <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 (00) 000-00-00" required aria-describedby="ePhone">
+          <span class="err" id="ePhone">Введите номер полностью: +998 и 9 цифр</span>
+        </div>
+        <div class="field" data-field="address">
+          <label for="fAddress">Адрес доставки</label>
+          <textarea id="fAddress" name="address" autocomplete="street-address" placeholder="Улица, дом, подъезд, этаж, квартира" required aria-describedby="eAddress"></textarea>
+          <span class="err" id="eAddress">Укажите адрес — улицу и номер дома</span>
+        </div>
+        <fieldset class="field" data-field="pay">
+          <legend>Способ оплаты</legend>
+          <div class="pay">
+            <label><input type="radio" name="pay" value="cash" checked><span class="mark" aria-hidden="true"></span>Наличные</label>
+            <label><input type="radio" name="pay" value="card"><span class="mark" aria-hidden="true"></span>Карта курьеру</label>
+            <label><input type="radio" name="pay" value="payme"><span class="mark" aria-hidden="true"></span>Payme</label>
+            <label><input type="radio" name="pay" value="click"><span class="mark" aria-hidden="true"></span>Click</label>
+          </div>
+        </fieldset>
+        <div class="field">
+          <label for="fNote">Комментарий <span class="hint">— необязательно</span></label>
+          <input id="fNote" name="note" type="text" placeholder="Например: без лука, позвонить за 5 минут">
+        </div>
+        <ul class="mini-sum" id="miniSum" aria-label="Итог заказа"></ul>
+        <p class="demo-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><span>Это демо: данные никуда не отправляются.</span></p>
+      </div>
+      <div class="view-foot">
+        <button class="btn btn--red btn--block btn--lg" type="submit" id="submitBtn">Подтвердить заказ</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="view view-success" data-view="success" aria-label="Заказ принят" hidden>
+    <div class="view-scroll">
+      <div class="success" tabindex="-1" id="successBox">
+        <svg class="success-ill" viewBox="0 0 132 132" aria-hidden="true"><circle cx="66" cy="66" r="62" fill="#ffd23f"/><circle class="c" cx="66" cy="66" r="52" fill="none" stroke="#111" stroke-width="6" stroke-linecap="round" transform="rotate(-90 66 66)"/><path class="k" d="M44 68l15 15 30-32" fill="none" stroke="#e63b2e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 id="successTitle">Заказ принят!</h3>
+        <div class="order-no" id="orderNo">№ BL-0000</div>
+        <div class="eta"><span id="etaTime">Доставка ≈ 30–40 мин</span><span id="etaPay">Оплата: наличные</span></div>
+        <p class="demo-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><span>Это демо — на реальном сайте заказ придёт в Telegram ресторану, а вам — СМС с подтверждением.</span></p>
+      </div>
+    </div>
+    <div class="view-foot">
+      <button class="btn btn--block btn--lg" type="button" id="doneBtn">Вернуться в меню</button>
+    </div>
+  </section>
+</aside>
+
+<div class="sr-only" id="live" aria-live="polite" aria-atomic="true"></div>
+
+<script src="/demos/burger-lab/app.js" defer></script>
+</body>
+</html>
