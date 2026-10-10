@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KIYIM — одежда из Ташкента · Осень 2026</title>
+  <meta name="description" content="KIYIM — концепт интернет-магазина уличной одежды из Ташкента: худи, футболки, карго и аксессуары. Демо-проект студии SAJA BOYS.">
+  <meta name="theme-color" content="#f5f4f0">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='34' text-anchor='middle' fill='%23f5f4f0'%3EK%3C/text%3E%3Ccircle cx='50' cy='16' r='6' fill='%232f4bff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip" href="#catalog">Перейти к каталогу</a>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.5 2.7C19.5 15.4 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart-f" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.5 2.7C19.5 15.4 12 20 12 20z" fill="currentColor" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 32 32"><path d="M3 9h15v13H3zM18 13h6l4 5v4h-10z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="9" cy="23.5" r="2.5" fill="var(--bg)" stroke="currentColor" stroke-width="1.7"/><circle cx="23" cy="23.5" r="2.5" fill="var(--bg)" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 32 32"><path d="M7 12h17l-4-4M25 20H8l4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-card" viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M4 13h24M9 19h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14M10 7V5h4v2M7 7l1 12h8l1-12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- Announcement -->
+  <div class="announce" role="note">
+    <div class="announce__track">
+      <span>Бесплатная доставка по Ташкенту от 500&nbsp;000&nbsp;сум</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <div class="header__inner wrap">
+      <button class="icon-btn header__burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mnav">
+        <svg><use href="#i-menu"/></svg>
+      </button>
+      <a class="logo" href="#top" aria-label="KIYIM — на главную">KIYIM<span class="logo__dot" aria-hidden="true"></span></a>
+      <nav class="nav" aria-label="Категории">
+        <a href="#catalog" data-filter="new">Новинки</a>
+        <a href="#catalog" data-filter="hoodie">Худи</a>
+        <a href="#catalog" data-filter="tee">Футболки</a>
+        <a href="#catalog" data-filter="pants">Брюки</a>
+        <a href="#catalog" data-filter="acc">Аксессуары</a>
+        <a href="#catalog" data-filter="ikat">Капсула «Ипак»</a>
+      </nav>
+      <div class="header__tools">
+        <button class="icon-btn" id="searchBtn" aria-label="Поиск" aria-controls="search">
+          <svg><use href="#i-search"/></svg>
+        </button>
+        <button class="icon-btn" id="wishBtn" aria-label="Избранное">
+          <svg><use href="#i-heart"/></svg>
+          <span class="count" id="wishCount" aria-hidden="true">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="Корзина" aria-controls="cart">
+          <svg><use href="#i-bag"/></svg>
+          <span class="count count--accent" id="cartCount" aria-hidden="true">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow hero__eyebrow"><span class="pulse" aria-hidden="true"></span>Ташкент · Дроп 03</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>Новая</span></span>
+          <span class="line"><span>коллекция</span></span>
+          <span class="line line--accent"><span>Осень <em>2026</em></span></span>
+        </h1>
+        <p class="hero__lead">Оверсайз-худи, плотные футболки и&nbsp;карго из&nbsp;хлопка. Одежда для города, который не&nbsp;стоит на&nbsp;месте.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#catalog" data-filter="all">Смотреть коллекцию <svg class="btn__arrow"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--ghost btn--lg" href="#capsule">Капсула «Ипак»</a>
+        </div>
+        <ul class="hero__meta" aria-label="Коротко о коллекции">
+          <li><b>15</b> моделей</li>
+          <li><b>XS–XL</b> размеры</li>
+          <li><b>1 день</b> доставка</li>
+        </ul>
+      </div>
+      <div class="hero__art" id="heroArt" aria-hidden="true">
+        <div class="hero__tile hero__tile--main">
+          <div class="hero__float hero__float--a" id="heroMain"></div>
+          <div class="hero__label">
+            <span>Худи «Чорсу»</span>
+            <b>549&nbsp;000&nbsp;сум</b>
+          </div>
+        </div>
+        <div class="hero__tile hero__tile--sub">
+          <div class="hero__float hero__float--b" id="heroSub"></div>
+        </div>
+        <div class="hero__tile hero__tile--mini">
+          <div class="hero__float hero__float--c" id="heroMini"></div>
+        </div>
+        <svg class="hero__seal" viewBox="0 0 120 120">
+          <defs><path id="sealPath" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs>
+          <circle cx="60" cy="60" r="58" fill="#111"/>
+          <text font-size="10.5" textLength="272" lengthAdjust="spacing" fill="#f5f4f0" font-family="Unbounded, sans-serif" font-weight="500"><textPath href="#sealPath">ДРОП 03 · ОСЕНЬ 2026 · KIYIM ·</textPath></text>
+          <path d="M60 46l3.6 10.4L74 60l-10.4 3.6L60 74l-3.6-10.4L46 60l10.4-3.6z" fill="#2f4bff"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>KIYIM</span><i>✦</i><span>Осень 2026</span><i>✦</i><span>Доставка по Ташкенту за 1 день</span><i>✦</i><span>Обмен 14 дней</span><i>✦</i><span>Payme · Click</span><i>✦</i>
+        <span>KIYIM</span><i>✦</i><span>Осень 2026</span><i>✦</i><span>Доставка по Ташкенту за 1 день</span><i>✦</i><span>Обмен 14 дней</span><i>✦</i><span>Payme · Click</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="cats wrap" aria-labelledby="cats-title">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Категории</p>
+        <h2 class="h2" id="cats-title">Что ищем сегодня?</h2>
+      </div>
+      <div class="cats__grid" id="catTiles"></div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="catalog wrap" id="catalog" aria-labelledby="catalog-title" tabindex="-1">
+      <div class="catalog__head">
+        <div class="sec-head reveal">
+          <p class="eyebrow">Каталог</p>
+          <h2 class="h2" id="catalog-title">Коллекция <span class="muted">осень&nbsp;’26</span></h2>
+        </div>
+        <div class="sort reveal">
+          <label for="sort" class="sort__label">Сортировка</label>
+          <div class="select">
+            <select id="sort">
+              <option value="pop">По популярности</option>
+              <option value="asc">Цена ↑</option>
+              <option value="desc">Цена ↓</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="filters reveal" role="toolbar" aria-label="Фильтр по категории">
+        <div class="chips" id="chips">
+          <button class="chip" data-chip="all" aria-pressed="true">Все</button>
+          <button class="chip" data-chip="new" aria-pressed="false">Новинки</button>
+          <button class="chip" data-chip="hoodie" aria-pressed="false">Худи</button>
+          <button class="chip" data-chip="tee" aria-pressed="false">Футболки</button>
+          <button class="chip" data-chip="pants" aria-pressed="false">Брюки</button>
+          <button class="chip" data-chip="acc" aria-pressed="false">Аксессуары</button>
+          <button class="chip" data-chip="ikat" aria-pressed="false">«Ипак»</button>
+          <button class="chip chip--wish" data-chip="wish" aria-pressed="false"><svg><use href="#i-heart"/></svg>Избранное <span class="chip__n" id="chipWishN">0</span></button>
+        </div>
+        <p class="filters__count" id="resultCount" aria-live="polite"></p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="grid-empty" id="gridEmpty" hidden>
+        <svg><use href="#i-heart"/></svg>
+        <p class="grid-empty__t">В избранном пока пусто</p>
+        <p>Нажмите на сердечко на карточке, чтобы сохранить вещь.</p>
+        <button class="btn btn--ghost" data-chip-go="all">Смотреть все товары</button>
+      </div>
+    </section>
+
+    <!-- Capsule -->
+    <section class="capsule wrap" id="capsule" aria-labelledby="capsule-title">
+      <div class="capsule__inner reveal">
+        <div class="capsule__text">
+          <p class="eyebrow eyebrow--light">Капсула</p>
+          <h2 class="h2 capsule__title" id="capsule-title">«Ипак» — икат в&nbsp;городском крое</h2>
+          <p class="capsule__lead">Узор, знакомый по&nbsp;маргиланскому шёлку, — на&nbsp;кармане худи, груди футболки и&nbsp;шопере. Четыре вещи, одна история.</p>
+          <div class="capsule__cta">
+            <a class="btn btn--light btn--lg" href="#catalog" data-filter="ikat">Смотреть капсулу <svg class="btn__arrow"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+        <div class="capsule__art" aria-hidden="true">
+          <div class="capsule__pattern" id="capsulePattern"></div>
+          <div class="capsule__garment" id="capsuleGarment"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values wrap" aria-label="Преимущества">
+      <ul class="values__list">
+        <li class="value reveal">
+          <span class="value__ic"><svg><use href="#i-truck"/></svg></span>
+          <div><h3>Доставка за 1 день</h3><p>Курьером по Ташкенту. Бесплатно от&nbsp;500&nbsp;000&nbsp;сум.</p></div>
+        </li>
+        <li class="value reveal" style="--d:.08s">
+          <span class="value__ic"><svg><use href="#i-swap"/></svg></span>
+          <div><h3>Обмен 14 дней</h3><p>Не подошёл размер — заменим или вернём деньги.</p></div>
+        </li>
+        <li class="value reveal" style="--d:.16s">
+          <span class="value__ic"><svg><use href="#i-card"/></svg></span>
+          <div><h3>Оплата Payme / Click</h3><p>Или наличными курьеру при&nbsp;получении.</p></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="news wrap" aria-labelledby="news-title">
+      <div class="news__inner reveal">
+        <div class="news__text">
+          <p class="eyebrow">Рассылка</p>
+          <h2 class="h2" id="news-title">Первыми о&nbsp;новых дропах</h2>
+          <p class="news__lead">Раз в&nbsp;месяц — новые модели, лукбуки и&nbsp;ранний доступ к&nbsp;лимитированным капсулам. Без&nbsp;спама.</p>
+        </div>
+        <form class="news__form" id="newsForm" novalidate>
+          <div class="news__field">
+            <label for="newsEmail" class="sr-only">Электронная почта</label>
+            <input id="newsEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@mail.uz" aria-describedby="newsErr">
+            <button class="btn btn--primary" type="submit">Подписаться</button>
+          </div>
+          <p class="field-error" id="newsErr"></p>
+          <p class="news__fine">Нажимая «Подписаться», вы соглашаетесь получать письма. Отписаться можно в&nbsp;один клик.</p>
+        </form>
+        <div class="news__done" id="newsDone" hidden tabindex="-1">
+          <span class="news__check"><svg><use href="#i-check"/></svg></span>
+          <div>
+            <p class="news__done-t">Вы в списке!</p>
+            <p id="newsDoneText">Это демо — на реальном сайте письма о дропах будут приходить на вашу почту.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a class="logo logo--light" href="#top">KIYIM<span class="logo__dot" aria-hidden="true"></span></a>
+          <p>Уличная одежда из Ташкента. Худи, футболки, карго и&nbsp;аксессуары — для города, который не&nbsp;стоит на&nbsp;месте.</p>
+        </div>
+        <nav class="footer__col" aria-label="Магазин">
+          <h3>Магазин</h3>
+          <a href="#catalog" data-filter="new">Новинки</a>
+          <a href="#catalog" data-filter="hoodie">Худи и свитшоты</a>
+          <a href="#catalog" data-filter="tee">Футболки</a>
+          <a href="#catalog" data-filter="pants">Брюки</a>
+          <a href="#catalog" data-filter="acc">Аксессуары</a>
+        </nav>
+        <div class="footer__col">
+          <h3>Покупателям</h3>
+          <p>Доставка по Ташкенту — 1 день</p>
+          <p>Обмен и возврат — 14 дней</p>
+          <p>Оплата: Payme, Click, наличные</p>
+        </div>
+        <div class="footer__col">
+          <h3>Контакты</h3>
+          <p>+998 (00) 000-00-00</p>
+          <p>Ежедневно, 10:00–21:00</p>
+          <p class="muted-light">Ссылки на Telegram и Instagram — на&nbsp;реальном сайте</p>
+        </div>
+      </div>
+      <div class="footer__word" aria-hidden="true">KIYIM</div>
+      <div class="footer__bottom">
+        <p>© 2026 KIYIM. Концепт-проект: бренд, товары и цены вымышлены.</p>
+        <p>Дизайн и разработка — <a href="/">SAJA BOYS</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Studio badge -->
+  <a class="studio-badge" href="/"><span class="studio-badge__dot" aria-hidden="true"></span>Концепт-дизайн · SAJA BOYS</a>
+
+  <!-- Mobile nav -->
+  <div class="layer mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Меню" hidden>
+    <div class="layer__backdrop" data-close></div>
+    <div class="mnav__panel layer__panel">
+      <div class="mnav__head">
+        <span class="logo">KIYIM<span class="logo__dot" aria-hidden="true"></span></span>
+        <button class="icon-btn" data-close aria-label="Закрыть меню"><svg><use href="#i-close"/></svg></button>
+      </div>
+      <nav class="mnav__links" aria-label="Категории">
+        <a href="#catalog" data-filter="new"><span>Новинки</span><small>05</small></a>
+        <a href="#catalog" data-filter="hoodie"><span>Худи</span><small>04</small></a>
+        <a href="#catalog" data-filter="tee"><span>Футболки</span><small>04</small></a>
+        <a href="#catalog" data-filter="pants"><span>Брюки</span><small>03</small></a>
+        <a href="#catalog" data-filter="acc"><span>Аксессуары</span><small>04</small></a>
+        <a href="#catalog" data-filter="ikat"><span>«Ипак»</span><small>04</small></a>
+      </nav>
+      <div class="mnav__foot">
+        <p>Бесплатная доставка по Ташкенту от 500&nbsp;000&nbsp;сум</p>
+        <p>+998 (00) 000-00-00</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="layer search" id="search" role="dialog" aria-modal="true" aria-label="Поиск по каталогу" hidden>
+    <div class="layer__backdrop" data-close></div>
+    <div class="search__panel layer__panel">
+      <div class="wrap">
+        <div class="search__bar">
+          <svg class="search__ic"><use href="#i-search"/></svg>
+          <label for="searchInput" class="sr-only">Поиск</label>
+          <input id="searchInput" type="search" placeholder="Худи, карго, икат…" autocomplete="off" aria-controls="searchResults">
+          <button class="icon-btn" data-close aria-label="Закрыть поиск"><svg><use href="#i-close"/></svg></button>
+        </div>
+        <div class="search__hints" id="searchHints">
+          <span>Популярное:</span>
+          <button class="chip chip--sm" data-q="худи">худи</button>
+          <button class="chip chip--sm" data-q="карго">карго</button>
+          <button class="chip chip--sm" data-q="икат">икат</button>
+          <button class="chip chip--sm" data-q="кепка">кепка</button>
+        </div>
+        <ul class="search__results" id="searchResults" aria-live="polite"></ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick view -->
+  <div class="layer modal" id="qv" role="dialog" aria-modal="true" aria-labelledby="qvTitle" hidden>
+    <div class="layer__backdrop" data-close></div>
+    <div class="modal__panel layer__panel" id="qvPanel"></div>
+  </div>
+
+  <!-- Cart drawer -->
+  <div class="layer drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+    <div class="layer__backdrop" data-close></div>
+    <div class="drawer__panel layer__panel">
+      <div class="drawer__head">
+        <button class="icon-btn drawer__back" id="cartBack" aria-label="Назад к корзине" hidden><svg style="transform:scaleX(-1)"><use href="#i-arrow"/></svg></button>
+        <h2 id="cartTitle">Корзина <span class="drawer__n" id="cartTitleN"></span></h2>
+        <button class="icon-btn" data-close aria-label="Закрыть корзину"><svg><use href="#i-close"/></svg></button>
+      </div>
+
+      <!-- view: cart -->
+      <div class="drawer__view" data-view="cart">
+        <div class="drawer__scroll">
+          <div class="ship" id="ship">
+            <p class="ship__t" id="shipText"></p>
+            <div class="ship__bar" role="progressbar" aria-label="До бесплатной доставки" aria-valuemin="0" aria-valuemax="100" id="shipBar"><span id="shipFill"></span></div>
+          </div>
+          <ul class="cart-list" id="cartList"></ul>
+          <div class="cart-empty" id="cartEmpty" hidden>
+            <div class="cart-empty__ic"><svg><use href="#i-bag"/></svg></div>
+            <p class="cart-empty__t">Корзина пуста</p>
+            <p>Добавьте что-нибудь из новой коллекции.</p>
+            <a class="btn btn--primary" href="#catalog" data-filter="all" data-close-cart>Перейти в каталог</a>
+          </div>
+        </div>
+        <div class="drawer__foot" id="cartFoot">
+          <div class="sum-row"><span>Подытог</span><b id="subtotal">0 сум</b></div>
+          <p class="drawer__fine">Доставка рассчитывается при оформлении</p>
+          <button class="btn btn--primary btn--block btn--lg" id="toCheckout">Оформить заказ <svg class="btn__arrow"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+
+      <!-- view: checkout -->
+      <form class="drawer__view" data-view="checkout" id="checkout" novalidate hidden>
+        <div class="drawer__scroll">
+          <fieldset class="fs">
+            <legend>Контакты</legend>
+            <div class="field">
+              <label for="fName">Имя</label>
+              <input id="fName" name="name" autocomplete="name" placeholder="Как к вам обращаться" aria-describedby="eName">
+              <p class="field-error" id="eName"></p>
+            </div>
+            <div class="field">
+              <label for="fPhone">Телефон</label>
+              <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+998 (00) 000-00-00" aria-describedby="ePhone">
+              <p class="field-error" id="ePhone"></p>
+            </div>
+          </fieldset>
+          <fieldset class="fs">
+            <legend>Получение</legend>
+            <div class="opts opts--2">
+              <label class="opt"><input type="radio" name="delivery" value="courier" checked><span class="opt__box"><b>Курьер</b><small id="courierPrice">по Ташкенту, 1 день</small></span></label>
+              <label class="opt"><input type="radio" name="delivery" value="pickup"><span class="opt__box"><b>Самовывоз</b><small>бесплатно, сегодня</small></span></label>
+            </div>
+            <div class="field" id="addrField">
+              <label for="fAddr">Адрес доставки</label>
+              <input id="fAddr" name="address" autocomplete="street-address" placeholder="Район, улица, дом, квартира" aria-describedby="eAddr">
+              <p class="field-error" id="eAddr"></p>
+            </div>
+            <p class="pickup-note" id="pickupNote" hidden>Пункт выдачи в&nbsp;центре Ташкента — точный адрес появится на&nbsp;реальном сайте.</p>
+          </fieldset>
+          <fieldset class="fs">
+            <legend>Оплата</legend>
+            <div class="opts opts--3">
+              <label class="opt"><input type="radio" name="pay" value="Payme" checked><span class="opt__box opt__box--c"><b>Payme</b></span></label>
+              <label class="opt"><input type="radio" name="pay" value="Click"><span class="opt__box opt__box--c"><b>Click</b></span></label>
+              <label class="opt"><input type="radio" name="pay" value="Наличные"><span class="opt__box opt__box--c"><b>Наличные</b></span></label>
+            </div>
+          </fieldset>
+          <div class="summary">
+            <div class="sum-row"><span>Товары (<span id="sumN">0</span>)</span><span id="sumItems">0 сум</span></div>
+            <div class="sum-row"><span>Доставка</span><span id="sumShip">0 сум</span></div>
+            <div class="sum-row sum-row--total"><span>Итого</span><b id="sumTotal">0 сум</b></div>
+          </div>
+        </div>
+        <div class="drawer__foot">
+          <button class="btn btn--primary btn--block btn--lg" type="submit" id="placeOrder">Подтвердить заказ</button>
+          <p class="drawer__fine">Это демо: оплата не списывается</p>
+        </div>
+      </form>
+
+      <!-- view: success -->
+      <div class="drawer__view" data-view="success" hidden>
+        <div class="drawer__scroll success">
+          <div class="success__check"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-15"/></svg></div>
+          <p class="eyebrow">Заказ оформлен</p>
+          <h3 class="success__num" id="orderNum">№ KY-00000</h3>
+          <p class="success__lead" id="orderLead"></p>
+          <div class="success__demo">
+            <b>Это демо</b> — на&nbsp;реальном сайте заказ придёт в&nbsp;Telegram магазина, а&nbsp;менеджер перезвонит для подтверждения.
+          </div>
+          <dl class="success__dl" id="orderDl"></dl>
+        </div>
+        <div class="drawer__foot">
+          <button class="btn btn--primary btn--block btn--lg" id="backToShop">Вернуться к покупкам</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p class="noscript">Для работы магазина включите JavaScript.</p></noscript>
+  <script src="app.js"></script>
+</body>
+</html>
