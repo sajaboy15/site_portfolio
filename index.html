@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAJA BOYS — сайты для ресторанов, кафе и магазинов</title>
+  <meta name="description" content="SAJA BOYS — веб-студия из Ташкента. Делаем сайты для ресторанов, кафе и магазинов: меню, онлайн-заказ, бронирование, интернет-магазин с корзиной и заявками в Telegram.">
+  <meta name="theme-color" content="#0c0c0d">
+  <meta property="og:title" content="SAJA BOYS — сайты для ресторанов, кафе и магазинов">
+  <meta property="og:description" content="Меню, онлайн-заказ, бронирование и интернет-магазины, которые приводят гостей и покупателей.">
+  <meta property="og:image" content="/assets/og.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="is-loading">
+
+  <!-- Preloader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__brand">SAJA BOYS®</span>
+      <span class="loader__count"><span id="loaderCount">0</span>%</span>
+    </div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"><span class="cursor__label">Смотреть</span></div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#top" class="logo" data-magnetic>
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M21 11.5c-1-1.6-2.8-2.5-5-2.5-3 0-5 1.6-5 3.8 0 5 10 2.6 10 7.3 0 2.3-2.1 3.9-5.2 3.9-2.4 0-4.3-1-5.3-2.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </span>
+      <span>SAJA BOYS</span>
+    </a>
+    <nav class="nav" aria-label="Навигация">
+      <a href="#work" class="nav__link">Работы<sup>04</sup></a>
+      <a href="#services" class="nav__link">Услуги</a>
+      <a href="#process" class="nav__link">Процесс</a>
+      <a href="#faq" class="nav__link">Вопросы</a>
+      <a href="#contact" class="nav__link">Контакты</a>
+    </nav>
+    <div class="header__right">
+      <a href="#contact" class="btn btn--accent btn--sm" data-magnetic><span>Обсудить проект</span></a>
+      <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" aria-hidden="true">
+    <nav class="menu__nav">
+      <a href="#work" class="menu__link"><span>Работы</span></a>
+      <a href="#services" class="menu__link"><span>Услуги</span></a>
+      <a href="#process" class="menu__link"><span>Процесс</span></a>
+      <a href="#faq" class="menu__link"><span>Вопросы</span></a>
+      <a href="#contact" class="menu__link"><span>Контакты</span></a>
+    </nav>
+    <p class="menu__foot">Ташкент, Узбекистан · <span class="js-time">--:--</span></p>
+  </div>
+
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__meta">
+          <span class="pill"><span class="pill__dot"></span>Берём новые проекты</span>
+          <span class="hero__loc">Ташкент, Узбекистан · <span class="js-time">--:--</span></span>
+        </div>
+        <h1 class="hero__title">
+          <span class="line"><span class="line__in">Сайты для ресторанов</span></span>
+          <span class="line"><span class="line__in">и магазинов, которые</span></span>
+          <span class="line"><span class="line__in"><em class="hero__rotator" aria-live="polite"><span class="js-rotator">приводят гостей</span></em></span></span>
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__lead fade-up">Мы — SAJA BOYS. Делаем красивые и быстрые сайты для ресторанов, кафе, доставки и магазинов: меню, онлайн-заказ, бронирование столов и интернет-магазин — с заявками прямо в ваш Telegram.</p>
+          <div class="hero__actions fade-up">
+            <a href="#work" class="btn btn--light" data-magnetic><span>Смотреть работы</span><i class="btn__arrow">↓</i></a>
+            <a href="#contact" class="btn btn--ghost" data-magnetic><span>Обсудить проект</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Showreel strip -->
+      <div class="reel" aria-hidden="true">
+        <div class="reel__track">
+          <div class="reel__group js-reel"></div>
+          <div class="reel__group js-reel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value strip -->
+    <section class="stats container">
+      <div class="stat" data-reveal>
+        <span class="stat__num">24/7</span>
+        <span class="stat__label">сайт принимает заказы и брони, даже когда вы закрыты</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num">QR</span>
+        <span class="stat__label">меню на каждом столе — гость открывает его с телефона</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num">TG</span>
+        <span class="stat__label">заказы и заявки сразу приходят в Telegram</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num">100%</span>
+        <span class="stat__label">адаптив: идеально выглядит на любом телефоне</span>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-reveal>(01) Концепты</span>
+          <h2 class="section-title" data-reveal>Каким может быть ваш сайт</h2>
+          <p class="section-sub" data-reveal>Четыре живых демо-сайта, которые мы сделали, чтобы показать подход. Откройте любой — всё работает: меню, корзина, бронирование, оформление заказа.</p>
+        </div>
+
+        <div class="projects">
+
+          <article class="project project--wide" data-case="oshxona" data-cursor="view" data-reveal>
+            <div class="project__media" style="--m1:#16405f;--m2:#0f2a3f;--m3:#e8b04b">
+              <div class="browser" data-parallax="0.05">
+                <div class="browser__bar"><span></span><span></span><span></span><em>oshxona-navruz.uz</em></div>
+                <img src="/assets/work/oshxona-desktop.webp" alt="Сайт ресторана Oshxona Navro'z — главный экран" loading="lazy">
+              </div>
+              <div class="phone phone--float" data-parallax="-0.08">
+                <img src="/assets/work/oshxona-mobile.webp" alt="Сайт ресторана Oshxona Navro'z — мобильная версия" loading="lazy">
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__num">01</span>
+              <div>
+                <h3 class="project__title">Oshxona Navro'z</h3>
+                <p class="project__desc">Ресторан узбекской кухни: меню с категориями, заказ доставки и бронирование стола.</p>
+              </div>
+              <ul class="tags"><li>Ресторан</li><li>Меню</li><li>Бронь</li><li>Концепт</li></ul>
+            </div>
+          </article>
+
+          <article class="project" data-case="tong-coffee" data-cursor="view" data-reveal>
+            <div class="project__media" style="--m1:#ffd9bf;--m2:#f3e9dc;--m3:#ff6b2c">
+              <div class="browser" data-parallax="0.05">
+                <div class="browser__bar"><span></span><span></span><span></span><em>tong.coffee</em></div>
+                <img src="/assets/work/tong-coffee-desktop.webp" alt="Сайт кофейни Tong Coffee" loading="lazy">
+              </div>
+              <div class="phone phone--float" data-parallax="-0.08">
+                <img src="/assets/work/tong-coffee-mobile.webp" alt="Сайт кофейни Tong Coffee — мобильная версия" loading="lazy">
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__num">02</span>
+              <div>
+                <h3 class="project__title">Tong Coffee</h3>
+                <p class="project__desc">Кофейня: заказ заранее без очереди и карта лояльности прямо на сайте.</p>
+              </div>
+              <ul class="tags"><li>Кофейня</li><li>Предзаказ</li><li>Концепт</li></ul>
+            </div>
+          </article>
+
+          <article class="project" data-case="burger-lab" data-cursor="view" data-reveal>
+            <div class="project__media" style="--m1:#ffe27a;--m2:#ffd23f;--m3:#e63b2e">
+              <div class="browser" data-parallax="0.05">
+                <div class="browser__bar"><span></span><span></span><span></span><em>burgerlab.uz</em></div>
+                <img src="/assets/work/burger-lab-desktop.webp" alt="Сайт доставки Burger Lab" loading="lazy">
+              </div>
+              <div class="phone phone--float" data-parallax="-0.08">
+                <img src="/assets/work/burger-lab-mobile.webp" alt="Сайт доставки Burger Lab — мобильная версия" loading="lazy">
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__num">03</span>
+              <div>
+                <h3 class="project__title">Burger Lab</h3>
+                <p class="project__desc">Доставка еды: корзина, бесплатная доставка от суммы, оплата Payme и Click.</p>
+              </div>
+              <ul class="tags"><li>Доставка</li><li>Онлайн-заказ</li><li>Концепт</li></ul>
+            </div>
+          </article>
+
+          <article class="project project--wide" data-case="kiyim" data-cursor="view" data-reveal>
+            <div class="project__media" style="--m1:#ffffff;--m2:#e9e8e3;--m3:#2f4bff">
+              <div class="browser" data-parallax="0.05">
+                <div class="browser__bar"><span></span><span></span><span></span><em>kiyim.store</em></div>
+                <img src="/assets/work/kiyim-desktop.webp" alt="Интернет-магазин одежды KIYIM" loading="lazy">
+              </div>
+              <div class="phone phone--float" data-parallax="-0.08">
+                <img src="/assets/work/kiyim-mobile.webp" alt="Интернет-магазин KIYIM — мобильная версия" loading="lazy">
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__num">04</span>
+              <div>
+                <h3 class="project__title">KIYIM</h3>
+                <p class="project__desc">Интернет-магазин одежды: каталог с фильтрами, выбор цвета и размера, корзина и оформление заказа.</p>
+              </div>
+              <ul class="tags"><li>Магазин</li><li>E-commerce</li><li>Концепт</li></ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Рестораны</span><i>✦</i><span>Кафе</span><i>✦</i><span>Кофейни</span><i>✦</i><span>Доставка</span><i>✦</i><span>Магазины</span><i>✦</i><span>Бутики</span><i>✦</i>
+        </div>
+        <div class="marquee__group">
+          <span>Рестораны</span><i>✦</i><span>Кафе</span><i>✦</i><span>Кофейни</span><i>✦</i><span>Доставка</span><i>✦</i><span>Магазины</span><i>✦</i><span>Бутики</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="why">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <span class="eyebrow" data-reveal>(02) Зачем сайт</span>
+          <h2 class="section-title section-title--wide" data-reveal>Instagram — витрина. Сайт — касса, которая работает сама</h2>
+        </div>
+        <div class="why__grid">
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+            <h3>Вас находят в Google и Яндексе</h3>
+            <p>Люди ищут «плов рядом» или «кроссовки Ташкент». Сайт приводит тех, кто ещё не подписан на вас.</p>
+          </div>
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/><circle cx="10" cy="20.5" r="1"/><circle cx="17" cy="20.5" r="1"/></svg></span>
+            <h3>Заказ без переписки</h3>
+            <p>Гость сам выбирает блюда или товары, указывает адрес и оплату. Вы получаете готовый заказ, а не «сколько стоит?» в директе.</p>
+          </div>
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9.5v5M18 9.5v5"/></svg></span>
+            <h3>Без комиссии агрегаторов</h3>
+            <p>Заказы с собственного сайта не делятся процентом с площадками доставки — прибыль остаётся у вас.</p>
+          </div>
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 1.8 1.8.7-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg></span>
+            <h3>Доверие и стиль</h3>
+            <p>Красивый сайт с меню, ценами и фото показывает уровень заведения ещё до первого визита.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <span class="eyebrow" data-reveal>(03) Что мы делаем</span>
+          <h2 class="section-title" data-reveal>Всё, что нужно заведению онлайн</h2>
+        </div>
+        <ul class="svc">
+          <li class="svc__item" data-reveal>
+            <span class="svc__num">01</span>
+            <h3 class="svc__title">Сайт ресторана или кафе</h3>
+            <p class="svc__desc">Красивая главная, меню с ценами, фото, атмосфера, часы работы, адрес и кнопки «позвонить» и «маршрут».</p>
+            <span class="svc__arrow">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
+            <span class="svc__num">02</span>
+            <h3 class="svc__title">Электронное QR-меню</h3>
+            <p class="svc__desc">Гость сканирует код на столе и листает меню с телефона. Цены и блюда обновляются за минуту.</p>
+            <span class="svc__arrow">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
+            <span class="svc__num">03</span>
+            <h3 class="svc__title">Онлайн-заказ и доставка</h3>
+            <p class="svc__desc">Корзина, адрес, способ оплаты, Payme и Click. Заказ мгновенно приходит в Telegram.</p>
+            <span class="svc__arrow">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
+            <span class="svc__num">04</span>
+            <h3 class="svc__title">Бронирование столов</h3>
+            <p class="svc__desc">Форма брони с датой, временем и количеством гостей — без звонков и потерянных заявок.</p>
+            <span class="svc__arrow">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
+            <span class="svc__num">05</span>
+            <h3 class="svc__title">Интернет-магазин</h3>
+            <p class="svc__desc">Каталог с фильтрами, цвета и размеры, избранное, корзина и оформление заказа с доставкой.</p>
+            <span class="svc__arrow">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
+            <span class="svc__num">06</span>
+            <h3 class="svc__title">Google, Яндекс и 2ГИС</h3>
+            <p class="svc__desc">Базовое SEO, карточки на картах и связка с Instagram, чтобы вас находили новые гости.</p>
+            <span class="svc__arrow">↗</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-reveal>(04) Как мы работаем</span>
+          <h2 class="section-title" data-reveal>Четыре шага до запуска</h2>
+        </div>
+        <div class="steps">
+          <div class="step" data-reveal>
+            <span class="step__num">01</span>
+            <h3 class="step__title">Знакомство</h3>
+            <p>Приезжаем или созваниваемся, смотрим заведение, меню и что важно вам: заказы, брони или продажи.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__num">02</span>
+            <h3 class="step__title">Дизайн</h3>
+            <p>Рисуем сайт в стиле вашего бренда. Показываем макет и вносим правки, пока не понравится.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__num">03</span>
+            <h3 class="step__title">Разработка</h3>
+            <p>Собираем быстрый сайт, подключаем меню, корзину, оплату и уведомления в Telegram.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__num">04</span>
+            <h3 class="step__title">Запуск</h3>
+            <p>Публикуем на вашем домене, печатаем QR-коды для столов и остаёмся на связи после запуска.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container faq__grid">
+        <div>
+          <span class="eyebrow" data-reveal>(05) Вопросы</span>
+          <h2 class="section-title" data-reveal>Частые вопросы</h2>
+        </div>
+        <div class="faq__list">
+          <details class="faq__item" data-reveal>
+            <summary>Сколько стоит сайт?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Зависит от задачи: сайт-меню и интернет-магазин — разные объёмы работы. Расскажите о заведении, и после короткого созвона мы назовём точную цену и сроки.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>Смогу ли я сам менять меню и цены?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Да. Договоримся, как удобнее: простая таблица или панель управления, где вы меняете блюда, цены и наличие без программиста.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>Куда приходят заказы и брони?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>В Telegram — вам, администратору или в общий чат смены. Можно добавить и почту.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>У меня нет фото и текстов — это проблема?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Нет. Поможем с текстами и подскажем, как снять блюда или товары, чтобы они выглядели аппетитно.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>Сайты в портфолио — реальные заведения?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Это концепты: мы сделали их, чтобы показать, как может выглядеть и работать сайт для ресторана, кофейни, доставки и магазина. Ваш сайт будет сделан под ваш бренд с вашими фото и меню.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact__top">
+          <span class="eyebrow" data-reveal>(06) Контакты</span>
+          <h2 class="contact__title">
+            <span class="line"><span class="line__in">Хотите такой же?</span></span>
+            <span class="line"><span class="line__in">Давайте <em>обсудим</em></span></span>
+          </h2>
+        </div>
+
+        <form class="form" id="contactForm" novalidate data-reveal>
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Как вас зовут</span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Имя и название заведения">
+            </label>
+            <label class="field">
+              <span class="field__label">Как с вами связаться</span>
+              <input type="text" name="contact" required placeholder="Телефон или Telegram">
+            </label>
+          </div>
+          <fieldset class="chips">
+            <legend class="field__label">Ваш бизнес</legend>
+            <label class="chip"><input type="radio" name="business" value="Ресторан"><span>Ресторан</span></label>
+            <label class="chip"><input type="radio" name="business" value="Кафе / кофейня"><span>Кафе / кофейня</span></label>
+            <label class="chip"><input type="radio" name="business" value="Доставка"><span>Доставка</span></label>
+            <label class="chip"><input type="radio" name="business" value="Магазин"><span>Магазин</span></label>
+            <label class="chip"><input type="radio" name="business" value="Другое"><span>Другое</span></label>
+          </fieldset>
+          <fieldset class="chips">
+            <legend class="field__label">Что нужно</legend>
+            <label class="chip"><input type="checkbox" name="type" value="Сайт с меню"><span>Сайт с меню</span></label>
+            <label class="chip"><input type="checkbox" name="type" value="QR-меню"><span>QR-меню</span></label>
+            <label class="chip"><input type="checkbox" name="type" value="Онлайн-заказ"><span>Онлайн-заказ</span></label>
+            <label class="chip"><input type="checkbox" name="type" value="Бронирование"><span>Бронирование</span></label>
+            <label class="chip"><input type="checkbox" name="type" value="Интернет-магазин"><span>Интернет-магазин</span></label>
+          </fieldset>
+          <label class="field">
+            <span class="field__label">Комментарий</span>
+            <textarea name="message" rows="3" placeholder="Ссылка на Instagram, пожелания, сроки"></textarea>
+          </label>
+          <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form__foot">
+            <button type="submit" class="btn btn--accent btn--lg" data-magnetic>
+              <span class="js-submit-label">Отправить заявку</span><i class="btn__arrow">→</i>
+            </button>
+            <p class="form__status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__row">
+        <div>
+          <p class="footer__label">Локация</p>
+          <p>Ташкент, Узбекистан<br><span class="js-time">--:--</span> GMT+5</p>
+        </div>
+        <div>
+          <p class="footer__label">Навигация</p>
+          <p><a href="#work">Работы</a><br><a href="#services">Услуги</a><br><a href="#contact">Контакты</a></p>
+        </div>
+        <div>
+          <p class="footer__label">Демо-сайты</p>
+          <p><a href="/demos/oshxona/">Oshxona Navro'z ↗</a><br><a href="/demos/tong-coffee/">Tong Coffee ↗</a><br><a href="/demos/burger-lab/">Burger Lab ↗</a><br><a href="/demos/kiyim/">KIYIM ↗</a></p>
+        </div>
+        <a href="#top" class="totop" data-magnetic aria-label="Наверх">↑</a>
+      </div>
+      <div class="footer__brand" aria-hidden="true">SAJA BOYS</div>
+      <div class="footer__bottom">
+        <span>© 2026 SAJA BOYS</span>
+        <span>Сайты для ресторанов, кафе и магазинов</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Case study overlay -->
+  <div class="case" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseTitle">
+    <div class="case__backdrop" data-close></div>
+    <div class="case__panel" data-lenis-prevent>
+      <button class="case__close" data-close aria-label="Закрыть"><span></span><span></span></button>
+      <div class="case__content" id="caseContent"></div>
+    </div>
+  </div>
+
+  <script src="/assets/vendor/lenis.min.js" defer></script>
+  <script src="/main.js" defer></script>
+</body>
+</html>
