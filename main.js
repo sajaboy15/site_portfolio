@@ -79,8 +79,8 @@
   /* ------------------------------------------------------------------ */
   const reelHtml = CASE_ORDER.map((id, i) => {
     const phoneOf = CASE_ORDER[(i + 2) % CASE_ORDER.length];
-    return `<figure class="reel__item"><img src="/assets/work/${id}-desktop.webp" alt=""></figure>` +
-      `<figure class="reel__item reel__item--tall"><img src="/assets/work/${phoneOf}-mobile.webp" alt=""></figure>`;
+    return `<figure class="reel__item"><img src="assets/work/${id}-desktop.webp" alt=""></figure>` +
+      `<figure class="reel__item reel__item--tall"><img src="assets/work/${phoneOf}-mobile.webp" alt=""></figure>`;
   }).join('');
   $$('.js-reel').forEach((g) => { g.innerHTML = reelHtml; });
 
@@ -278,7 +278,7 @@
         ${c.features.map(([b, s]) => `<div class="case__feature"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('')}
       </div>
       <div class="case__actions">
-        <a class="btn btn--light" href="/demos/${id}/" target="_blank" rel="noopener"><span>Открыть демо-сайт</span><i class="btn__arrow">↗</i></a>
+        <a class="btn btn--light" href="demos/${id}/index.html" target="_blank" rel="noopener"><span>Открыть демо-сайт</span><i class="btn__arrow">↗</i></a>
         <a class="btn btn--accent js-case-contact" href="#contact"><span>Хочу такой сайт</span><i class="btn__arrow">→</i></a>
       </div>
       <p class="case__demo-note">Это концепт: заведение вымышленное, а все функции на демо-сайте работают по-настоящему.</p>
