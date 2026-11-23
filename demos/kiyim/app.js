@@ -1,4 +1,4 @@
-/* KIYIM — concept store · SAJA BOYS · vanilla JS */
+/* KIYIM — concept store · Raqam · vanilla JS */
 (function () {
   'use strict';
 

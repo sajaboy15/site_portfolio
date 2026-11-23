@@ -1,4 +1,4 @@
-/* Tong Coffee — concept by SAJA BOYS. Vanilla JS, no dependencies. */
+/* Tong Coffee — concept by Raqam. Vanilla JS, no dependencies. */
 (() => {
   'use strict';
 

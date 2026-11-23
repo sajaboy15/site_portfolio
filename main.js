@@ -1,4 +1,4 @@
-/* SAJA BOYS — portfolio interactions */
+/* Raqam — site interactions */
 (function () {
   'use strict';
 
@@ -15,9 +15,73 @@
   /* Case studies                                                        */
   /* ------------------------------------------------------------------ */
   const CASES = {
+    orchestra: {
+      kind: 'real',
+      title: 'Национальный оркестр',
+      eyebrow: 'Проект 01 · Госсектор и культура',
+      lead: 'Официальный сайт Национального оркестра Филармонии Узбекистана. Проект сделан для Министерства культуры Республики Узбекистан.',
+      facts: [['Заказчик', 'Министерство культуры РУз'], ['Тип', 'Официальный сайт'], ['Сфера', 'Культура'], ['Платформа', 'Веб, адаптив']],
+      task: 'Оркестру нужен официальный сайт, который достойно представляет коллектив государственного уровня и даёт зрителям и партнёрам понятный источник информации о нём.',
+      solution: 'Сделали официальный сайт оркестра в торжественном классическом стиле, адаптированный под телефоны и компьютеры.',
+      features: [],
+      links: [],
+    },
+    'scopos-app': {
+      kind: 'real',
+      title: 'Scopos',
+      eyebrow: 'Проект 02 · AI-продукт',
+      lead: 'AI-коуч для Windows. Сотрудник спрашивает своими словами — например, «как создать счёт?» — и Scopos показывает курсором, куда нажать дальше, шаг за шагом прямо в рабочей CRM или ERP.',
+      facts: [['Тип', 'Десктоп + AI'], ['Платформа', 'Windows'], ['Языки', 'RU, UZ, EN'], ['Статус', 'Пилот с U VENDOR']],
+      task: 'В CRM и ERP сотни меню и форм. В пилотной компании новому сотруднику нужно около двух недель, чтобы работать без помощи, а опытных коллег постоянно отвлекают вопросами «куда нажать?». Инструкции и видео быстро устаревают.',
+      solution: 'Приложение читает живой экран и структуру открытого окна, Claude строит план шагов, а прозрачный слой показывает курсором нужную кнопку. Scopos работает поверх уже внедрённой системы — ничего не нужно переделывать. Выученные маршруты сохраняются и повторяются без обращения к AI.',
+      features: [
+        ['Видит экран', 'Скриншот и Windows UI Automation: названия и положение кнопок в открытом окне.'],
+        ['Шаг за шагом', 'Вопрос своими словами превращается в маршрут из шагов с курсором на нужной кнопке.'],
+        ['Запоминает', 'Сохранённые маршруты и база знаний компании: повторные вопросы — без вызова AI.'],
+        ['Тяга', 'Пилот с U VENDOR, контракт на 5 лет с New Uzbekistan University, соглашение с Uncle Chill, акселератор IDROCK.'],
+      ],
+      stack: ['Electron', 'React', 'TypeScript', 'Windows UI Automation', 'Claude vision', 'Python'],
+      links: [{ href: 'https://github.com/sajaboy15/scopos/releases/latest', label: 'Скачать для Windows' }],
+    },
+    'scopos-site': {
+      kind: 'real',
+      title: 'Сайт Scopos',
+      eyebrow: 'Проект 03 · Сайт продукта',
+      lead: 'Сайт AI-продукта Scopos для клиентов и инвесторов: за несколько минут объясняет проблему, показывает продукт в деле и убеждает, что команда доведёт его до рынка.',
+      facts: [['Тип', 'Сайт продукта'], ['Аудитория', 'Клиенты и инвесторы'], ['Платформа', 'Веб, адаптив'], ['Хостинг', 'Vercel']],
+      task: 'Десктоп-продукт трудно объяснить словами: человек должен увидеть, как курсор ведёт по интерфейсу. К Pitch Day сайт должен был отвечать на вопросы инвестора: какая проблема, кто команда, что уже сделано и как продукт будет расти.',
+      solution: 'Тёплый минималистичный стиль с терракотовым акцентом. Первый экран окружён «парящими» скриншотами реального интерфейса. Дальше — проблема и решение, команда, преимущества, дорожная карта, план внедрения по этапам, бизнес-модель и демо-видео.',
+      features: [
+        ['Парящие скриншоты', 'Окна реального интерфейса плавают вокруг заголовка и увеличиваются при наведении.'],
+        ['Питч-структура', 'Проблема → решение → команда → почему мы → дорожная карта → план → демо.'],
+        ['Партнёры', 'U VENDOR, New Uzbekistan University, Uncle Chill, IDROCK и Ipsilon Group.'],
+        ['Формы без бэкенда', 'Заявки и вопросы приходят на почту команды.'],
+      ],
+      stack: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
+      links: [],
+    },
+    'scopos-route': {
+      kind: 'real',
+      title: 'Scopos Route',
+      eyebrow: 'Проект 04 · Цифровизация продаж',
+      lead: 'Мобильный сайт для выездных визитов: показывает компании на карте, строит самый выгодный маршрут и ведёт по нему как навигатор. Маршрут можно попросить голосом.',
+      facts: [['Тип', 'PWA + AI'], ['Данные', '155 компаний'], ['Платформа', 'Телефон'], ['Защита', 'AES-256-GCM']],
+      task: 'Команда продаж объезжает десятки компаний в Ташкенте. Данные лежали в двух Excel-таблицах, и каждое утро приходилось вручную решать, к кому ехать сначала и как не потерять полдня в пробках.',
+      solution: '155 компаний из таблиц на карте: цвет — категория, буква — приоритет A/B/C. Оптимизатор выбирает компании и порядок так, чтобы время в пути было минимальным, а ценность визитов — максимальной. Фраза «4 ближайших колл-центра, сначала приоритет A» — и ассистент сам строит маршрут.',
+      features: [
+        ['Умный маршрут', 'Расстояния по дорогам с поправкой на пробки, режимы «Ближе / Баланс / Приоритет».'],
+        ['Голосовой AI-ассистент', 'Ищет по категориям и расстоянию, отмечает визиты и запускает навигацию.'],
+        ['Навигатор', 'Живая стрелка по компасу и GPS, голосовые подсказки, пересчёт при съезде с маршрута.'],
+        ['Данные под замком', 'Таблицы клиентов зашифрованы AES-256-GCM и открываются только ключом.'],
+      ],
+      stack: ['JavaScript', 'Leaflet', 'OSRM', 'Claude API', 'Web Speech', 'Web Crypto', 'PWA', 'Vercel'],
+      links: [],
+    },
     oshxona: {
+      kind: 'concept',
+      media: '--m1:#16405f;--m2:#0f2a3f;--m3:#e8b04b',
       title: "Oshxona Navro'z",
-      eyebrow: 'Концепт 01 · Ресторан',
+      eyebrow: 'Отраслевое решение · Ресторан',
       lead: 'Сайт ресторана узбекской кухни. Задача — передать атмосферу чайханы, показать меню с ценами и дать гостю два простых действия: заказать доставку или забронировать стол.',
       facts: [['Тип', 'Ресторан'], ['Функции', 'Меню, доставка, бронь'], ['Платформа', 'Веб, адаптив'], ['Статус', 'Концепт']],
       task: 'Гости ищут ресторан в телефоне: им нужно быстро увидеть меню, цены, адрес и часы работы. Если для этого надо писать в директ или звонить, часть гостей уходит к конкурентам.',
@@ -30,8 +94,10 @@
       ],
     },
     'tong-coffee': {
+      kind: 'concept',
+      media: '--m1:#ffd9bf;--m2:#f3e9dc;--m3:#ff6b2c',
       title: 'Tong Coffee',
-      eyebrow: 'Концепт 02 · Кофейня',
+      eyebrow: 'Отраслевое решение · Кофейня',
       lead: 'Сайт для кофейни, где гость заказывает напиток заранее и забирает его без очереди. Плюс карта лояльности прямо на сайте — седьмой кофе в подарок.',
       facts: [['Тип', 'Кофейня'], ['Функции', 'Предзаказ, лояльность'], ['Платформа', 'Веб, адаптив'], ['Статус', 'Концепт']],
       task: 'Утром у кофейни очередь, и часть гостей просто проходит мимо. Нужно, чтобы человек мог заказать по дороге и забрать готовый напиток, а ещё — возвращался снова.',
@@ -44,8 +110,10 @@
       ],
     },
     'burger-lab': {
+      kind: 'concept',
+      media: '--m1:#ffe27a;--m2:#ffd23f;--m3:#e63b2e',
       title: 'Burger Lab',
-      eyebrow: 'Концепт 03 · Доставка',
+      eyebrow: 'Отраслевое решение · Доставка',
       lead: 'Сайт доставки с полноценным онлайн-заказом: корзина, бесплатная доставка от суммы, адрес, оплата Payme, Click или наличными — без звонков и агрегаторов.',
       facts: [['Тип', 'Доставка еды'], ['Функции', 'Корзина, оплата'], ['Платформа', 'Веб, адаптив'], ['Статус', 'Концепт']],
       task: 'Агрегаторы забирают процент с каждого заказа, а приём заказов через Instagram отнимает время у администратора и приводит к ошибкам.',
@@ -58,8 +126,10 @@
       ],
     },
     kiyim: {
+      kind: 'concept',
+      media: '--m1:#ffffff;--m2:#e9e8e3;--m3:#2f4bff',
       title: 'KIYIM',
-      eyebrow: 'Концепт 04 · Интернет-магазин',
+      eyebrow: 'Отраслевое решение · Интернет-магазин',
       lead: 'Интернет-магазин одежды в минималистичном стиле: каталог с фильтрами и сортировкой, выбор цвета и размера, избранное, корзина и оформление заказа с доставкой по Ташкенту.',
       facts: [['Тип', 'Магазин одежды'], ['Функции', 'Каталог, корзина'], ['Платформа', 'Веб, адаптив'], ['Статус', 'Концепт']],
       task: 'Продажи через Instagram упираются в переписку: «есть ли размер M?», «а в чёрном?», «сколько доставка?». Магазину нужна витрина, где покупатель сам находит ответ и оформляет заказ.',
@@ -72,22 +142,24 @@
       ],
     },
   };
-  const CASE_ORDER = ['oshxona', 'tong-coffee', 'burger-lab', 'kiyim'];
+  const CASE_ORDER = ['orchestra', 'scopos-app', 'scopos-site', 'scopos-route', 'oshxona', 'tong-coffee', 'burger-lab', 'kiyim'];
+  const DEMOS = CASE_ORDER.filter((id) => CASES[id].kind === 'concept');
 
   /* ------------------------------------------------------------------ */
   /* Showreel: desktop shots alternate with phone shots of another demo  */
   /* ------------------------------------------------------------------ */
-  const reelHtml = CASE_ORDER.map((id, i) => {
-    const phoneOf = CASE_ORDER[(i + 2) % CASE_ORDER.length];
-    return `<figure class="reel__item"><img src="assets/work/${id}-desktop.webp" alt=""></figure>` +
-      `<figure class="reel__item reel__item--tall"><img src="assets/work/${phoneOf}-mobile.webp" alt=""></figure>`;
-  }).join('');
+  const shot = (f, tall) => `<figure class="reel__item${tall ? ' reel__item--tall' : ''}"><img src="assets/work/${f}.webp" alt=""></figure>`;
+  const reelHtml = [
+    shot('scopos-site-desktop'), shot('scopos-route-mobile', true),
+    ...DEMOS.flatMap((id, i) => [shot(`${id}-desktop`), shot(`${DEMOS[(i + 2) % DEMOS.length]}-mobile`, true)]),
+    shot('scopos-feature-2'), shot('scopos-site-mobile', true),
+  ].join('');
   $$('.js-reel').forEach((g) => { g.innerHTML = reelHtml; });
 
   /* ------------------------------------------------------------------ */
   /* Rotating words                                                      */
   /* ------------------------------------------------------------------ */
-  const ROTATOR = ['приводят гостей', 'принимают заказы', 'продают 24/7', 'радуют клиентов'];
+  const ROTATOR = ['работают на бизнес', 'приводят клиентов', 'экономят часы', 'продают 24/7'];
   const rotEl = $('.js-rotator');
   if (rotEl && !reduceMotion) {
     let i = 0;
@@ -195,7 +267,7 @@
 
   function observeReveals() {
     // stagger siblings that enter together
-    $$('.stats, .svc, .steps, .why__grid, .faq__list').forEach((group) => {
+    $$('.stats, .svc, .steps, .why__grid, .faq__list, .concept-grid').forEach((group) => {
       $$('[data-reveal]', group).forEach((el, i) => el.style.setProperty('--d', `${(i % 4) * 0.08}s`));
     });
     $$('[data-reveal]').forEach((el) => io.observe(el));
@@ -255,7 +327,16 @@
   function renderCase(id) {
     const c = CASES[id];
     const nextId = CASE_ORDER[(CASE_ORDER.indexOf(id) + 1) % CASE_ORDER.length];
-    const media = $(`[data-case="${id}"] .project__media`).cloneNode(true);
+    let media;
+    if (c.kind === 'concept') {
+      media = document.createElement('div');
+      media.className = 'project__media';
+      media.setAttribute('style', c.media);
+      media.innerHTML = `<div class="browser"><div class="browser__bar"><span></span><span></span><span></span><em>${esc(c.title)}</em></div><img src="assets/work/${id}-desktop.webp" alt="${esc(c.title)} — компьютер"></div>` +
+        `<div class="phone phone--float"><img src="assets/work/${id}-mobile.webp" alt="${esc(c.title)} — телефон"></div>`;
+    } else {
+      media = $(`[data-case="${id}"] .project__media`).cloneNode(true);
+    }
     media.classList.add('case__hero');
     $$('[data-parallax]', media).forEach((n) => { n.style.translate = ''; n.removeAttribute('data-parallax'); });
     $$('img', media).forEach((n) => n.removeAttribute('loading'));
@@ -274,19 +355,23 @@
         <div><h3>Задача</h3><p>${esc(c.task)}</p></div>
         <div><h3>Решение</h3><p>${esc(c.solution)}</p></div>
       </div>
-      <div class="case__features">
+      ${c.features.length ? `<div class="case__features">
         ${c.features.map(([b, s]) => `<div class="case__feature"><b>${esc(b)}</b><span>${esc(s)}</span></div>`).join('')}
-      </div>
+      </div>` : ''}
+      ${c.stack ? `<p class="case__eyebrow">Технологии</p><ul class="case__stack">${c.stack.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>` : ''}
       <div class="case__actions">
-        <a class="btn btn--light" href="demos/${id}/index.html" target="_blank" rel="noopener"><span>Открыть демо-сайт</span><i class="btn__arrow">↗</i></a>
-        <a class="btn btn--accent js-case-contact" href="#contact"><span>Хочу такой сайт</span><i class="btn__arrow">→</i></a>
+        ${c.kind === 'concept' ? `<a class="btn btn--light" href="demos/${id}/index.html" target="_blank" rel="noopener"><span>Открыть демо-сайт</span><i class="btn__arrow">↗</i></a>` : ''}
+        ${(c.links || []).map((l) => `<a class="btn btn--light" href="${l.href}" target="_blank" rel="noopener"><span>${esc(l.label)}</span><i class="btn__arrow">↗</i></a>`).join('')}
+        <a class="btn btn--accent js-case-contact" href="#contact"><span>${c.kind === 'concept' ? 'Хочу такой сайт' : 'Обсудить похожий проект'}</span><i class="btn__arrow">→</i></a>
       </div>
-      <p class="case__demo-note">Это концепт: заведение вымышленное, а все функции на демо-сайте работают по-настоящему.</p>
+      ${c.kind === 'concept' ? '<p class="case__demo-note">Это концепт: заведение вымышленное, а все функции на демо-сайте работают по-настоящему.</p>' : ''}
       <div class="case__next" role="button" tabindex="0">
         <div><small>Следующий проект</small><strong>${esc(CASES[nextId].title)}</strong></div>
         <i class="btn__arrow">→</i>
       </div>`;
     $('.js-hero-slot', caseContent).replaceWith(media);
+    const video = $('video', media);
+    if (video) { video.preload = 'auto'; video.muted = true; if (!reduceMotion) video.play().catch(() => {}); }
 
     $('.js-case-contact', caseContent).addEventListener('click', (e) => {
       e.preventDefault();
@@ -333,7 +418,7 @@
     card.tabIndex = 0;
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', `Открыть кейс ${CASES[card.dataset.case].title}`);
-    card.addEventListener('click', () => showCase(card.dataset.case));
+    card.addEventListener('click', (e) => { if (!e.target.closest('a')) showCase(card.dataset.case); });
     card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showCase(card.dataset.case); } });
   });
   $$('[data-close]').forEach((el) => el.addEventListener('click', () => closeCase()));
@@ -375,14 +460,13 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: `SAJA BOYS — заявка на сайт от ${name}`,
+          _subject: `Raqam — новая заявка от ${name}`,
           _template: 'table',
           name,
           contact,
-          business: fd.get('business') || '—',
-          need: fd.getAll('type').join(', ') || '—',
+                    need: fd.getAll('type').join(', ') || '—',
           message: String(fd.get('message') || '').trim() || '—',
-          source: 'Портфолио SAJA BOYS',
+          source: 'Сайт Raqam',
         }),
       });
       if (!res.ok) throw new Error(String(res.status));

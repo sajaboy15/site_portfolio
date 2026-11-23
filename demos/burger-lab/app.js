@@ -1,4 +1,4 @@
-/* Burger Lab — concept demo by SAJA BOYS. Vanilla JS, no dependencies. */
+/* Burger Lab — concept demo by Raqam. Vanilla JS, no dependencies. */
 (function () {
   'use strict';
 
