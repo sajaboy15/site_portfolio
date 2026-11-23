@@ -3,247 +3,281 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Raqam — разработка сайтов в Ташкенте</title>
-  <meta name="description" content="Raqam — веб-студия из Ташкента. Делаем сайты для брендов, ресторанов и государственных учреждений: дизайн, разработка, мобильная версия и SEO. Сайт Национального оркестра для Министерства культуры, bysohiba dresses.">
-  <meta name="theme-color" content="#f5f4f0">
+  <title>Raqam Studio — разработка сайтов в Ташкенте</title>
+  <meta name="description" content="Raqam Studio — веб-студия из Ташкента. Делаем сайты для брендов, ресторанов и государственных учреждений: дизайн, разработка, мобильная версия, SEO и цифровизация. bysohiba couture, Национальный оркестр.">
+  <meta name="theme-color" content="#0a0e12">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:site_name" content="Raqam">
-  <meta property="og:title" content="Raqam — разработка сайтов в Ташкенте">
-  <meta property="og:description" content="Сайты для брендов, ресторанов и государственных учреждений. Дизайн, разработка, мобильная версия и SEO.">
+  <meta property="og:site_name" content="Raqam Studio">
+  <meta property="og:title" content="Raqam Studio — разработка сайтов в Ташкенте">
+  <meta property="og:description" content="Сайты для брендов, ресторанов и государственных учреждений. Дизайн, разработка, SEO и цифровизация.">
   <meta property="og:image" content="assets/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "Raqam",
-    "description": "Веб-студия: разработка сайтов для брендов, ресторанов и государственных учреждений.",
+    "name": "Raqam Studio",
+    "description": "Веб-студия: сайты для брендов, ресторанов и государственных учреждений, SEO и цифровизация.",
     "areaServed": "Узбекистан",
     "address": { "@type": "PostalAddress", "addressLocality": "Ташкент", "addressCountry": "UZ" },
-    "knowsAbout": ["Разработка сайтов", "Сайты для ресторанов", "Интернет-магазины", "Веб-дизайн", "SEO", "Цифровизация бизнеса"]
+    "knowsAbout": ["Разработка сайтов", "Веб-дизайн", "Сайты для ресторанов", "Интернет-магазины", "SEO", "Цифровизация бизнеса"]
   }
   </script>
 </head>
-<body>
+<body class="is-loading">
 
-  <a class="skip" href="#work">Перейти к работам</a>
+  <!-- Preloader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <span class="loader__brand">raqam<b style="color:var(--accent)">.</b>studio</span>
+      <span class="loader__count"><span id="loaderCount">0</span>%</span>
+    </div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+  </div>
 
-  <!-- Header -->
+  <!-- Cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"><span class="cursor__label">Смотреть</span></div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header: becomes a floating pill once you scroll -->
   <header class="header">
-    <div class="header__inner">
-      <a href="#top" class="logo" aria-label="Raqam — на главную">
-        <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><rect x="7" y="7" width="18" height="18" rx="2"/><rect x="7" y="7" width="18" height="18" rx="2" transform="rotate(45 16 16)"/></g><circle cx="16" cy="16" r="3" fill="currentColor"/></svg>
-        <span>raqam<b>.</b></span>
+    <div class="header__bar">
+      <a href="#top" class="logo" data-magnetic aria-label="Raqam Studio — на главную">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="7" y="7" width="18" height="18" rx="2"/><rect x="7" y="7" width="18" height="18" rx="2" transform="rotate(45 16 16)"/></g><circle cx="16" cy="16" r="3" fill="currentColor"/></svg>
+        </span>
+        <span class="logo__word">raqam<b>.</b><small>studio</small></span>
       </a>
       <nav class="nav" aria-label="Навигация">
-        <a href="#work">Работы</a>
-        <a href="#services">Услуги</a>
-        <a href="#process">Как работаем</a>
-        <a href="#faq">Вопросы</a>
+        <a href="#work" class="nav__link">Работы</a>
+        <a href="#services" class="nav__link">Услуги</a>
+        <a href="#process" class="nav__link">Процесс</a>
+        <a href="#faq" class="nav__link">Вопросы</a>
       </nav>
-      <a href="#contact" class="btn btn--dark btn--sm header__cta">Обсудить проект</a>
-      <button class="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      <div class="header__right">
+        <a href="#contact" class="btn btn--accent btn--sm" data-magnetic><span>Обсудить проект</span></a>
+        <button class="burger" aria-label="Меню" aria-expanded="false"><span></span><span></span></button>
+      </div>
     </div>
   </header>
 
-  <div class="menu" id="menu" aria-hidden="true">
-    <nav>
-      <a href="#work">Работы</a>
-      <a href="#services">Услуги</a>
-      <a href="#process">Как работаем</a>
-      <a href="#faq">Вопросы</a>
-      <a href="#contact">Контакты</a>
+  <!-- Mobile menu -->
+  <div class="menu" aria-hidden="true">
+    <nav class="menu__nav">
+      <a href="#work" class="menu__link"><span>Работы</span></a>
+      <a href="#services" class="menu__link"><span>Услуги</span></a>
+      <a href="#process" class="menu__link"><span>Процесс</span></a>
+      <a href="#faq" class="menu__link"><span>Вопросы</span></a>
+      <a href="#contact" class="menu__link"><span>Контакты</span></a>
     </nav>
-    <a href="#contact" class="btn btn--accent">Обсудить проект</a>
+    <p class="menu__foot">Ташкент, Узбекистан · <span class="js-time">--:--</span></p>
   </div>
 
   <main id="top">
 
     <!-- Hero -->
-    <section class="hero container">
-      <p class="eyebrow reveal">Веб-студия · Ташкент</p>
-      <h1 class="hero__title reveal">
-        Делаем сайты,<br>
-        которые <em>продают</em> и&nbsp;вызывают доверие
-      </h1>
-      <div class="hero__row reveal">
-        <p class="hero__lead">Raqam проектирует и разрабатывает сайты для брендов, ресторанов и государственных учреждений. Дизайн под ваш стиль, удобная мобильная версия и SEO, чтобы вас находили в Google и Яндексе.</p>
-        <div class="hero__actions">
-          <a href="#work" class="btn btn--dark">Смотреть работы <i aria-hidden="true">↓</i></a>
-          <a href="#contact" class="btn btn--line">Обсудить проект</a>
+    <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero__meta">
+          <span class="pill"><span class="pill__dot"></span>Веб-студия · Ташкент</span>
+          <span class="hero__loc">Сейчас в Ташкенте <span class="js-time">--:--</span></span>
+        </div>
+        <h1 class="hero__title">
+          <span class="line"><span class="line__in">Сайты.</span></span>
+          <span class="line"><span class="line__in">Дизайн.</span></span>
+          <span class="line"><span class="line__in"><em>Цифровизация.</em></span></span>
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__lead fade-up">Raqam Studio делает сайты для брендов, ресторанов и государственных учреждений. Дизайн под ваш стиль, идеальная мобильная версия, SEO и заявки прямо в Telegram.</p>
+          <div class="hero__actions fade-up">
+            <a href="#work" class="btn btn--light" data-magnetic><span>Смотреть работы</span><i class="btn__arrow">↓</i></a>
+            <a href="#contact" class="btn btn--ghost" data-magnetic><span>Обсудить проект</span></a>
+          </div>
         </div>
       </div>
-      <div class="clients reveal" aria-label="Клиенты">
-        <span class="clients__label">Наши клиенты</span>
-        <ul class="clients__list">
-          <li>Министерство культуры РУз</li>
-          <li>Национальный оркестр</li>
-          <li>bysohiba dresses</li>
-          <li>Рестораны Ташкента</li>
-        </ul>
+
+      <!-- Work collage at the bottom of the hero -->
+      <div class="collage" aria-hidden="true">
+        <figure class="collage__item collage__item--a" data-parallax="0.04"><img src="assets/work/bysohiba-catalog.webp" alt=""></figure>
+        <figure class="collage__item collage__item--b" data-parallax="-0.03"><img src="assets/work/bysohiba-hero.webp" alt=""></figure>
+        <figure class="collage__item collage__item--c" data-parallax="0.05">
+          <span class="mini-poster"><small>Филармония Узбекистана</small><strong>Национальный оркестр</strong></span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Ribbon -->
+    <section class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__group">
+          <span>Ташкент</span><i>✦</i><span>Сайты для брендов</span><i>✦</i><span>Рестораны</span><i>✦</i><span>Интернет-магазины</span><i>✦</i><span>Госсектор</span><i>✦</i>
+        </div>
+        <div class="marquee__group">
+          <span>Ташкент</span><i>✦</i><span>Сайты для брендов</span><i>✦</i><span>Рестораны</span><i>✦</i><span>Интернет-магазины</span><i>✦</i><span>Госсектор</span><i>✦</i>
+        </div>
       </div>
     </section>
 
     <!-- Work -->
-    <section class="work container" id="work">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow reveal">Работы</p>
-          <h2 class="section-title reveal">Сайты, которые мы сделали</h2>
+    <section class="work" id="work">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <span class="eyebrow" data-reveal>(01) Избранные работы</span>
+            <h2 class="section-title" data-reveal>Сайты, которые мы сделали</h2>
+          </div>
+          <p class="section-sub" data-reveal>Нажмите на проект, чтобы посмотреть, что и зачем мы сделали.</p>
         </div>
-        <p class="section-head__note reveal">Каждая карточка — реальный проект для реального клиента.</p>
+
+        <div class="projects">
+
+          <article class="project project--wide" data-case="bysohiba" data-cursor="view" data-reveal>
+            <div class="project__media" style="--m1:#f3e7df;--m2:#d9c3b6;--m3:#4a3a33">
+              <div class="browser browser--back" data-parallax="0.05">
+                <div class="browser__bar"><span></span><span></span><span></span><em>bysohiba — каталог</em></div>
+                <img src="assets/work/bysohiba-catalog.webp" alt="Сайт bysohiba couture — каталог платьев" loading="lazy">
+              </div>
+              <div class="browser browser--front" data-parallax="-0.04">
+                <div class="browser__bar"><span></span><span></span><span></span><em>bysohiba couture</em></div>
+                <img src="assets/work/bysohiba-hero.webp" alt="Сайт bysohiba couture — главный экран" loading="lazy">
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__num">01</span>
+              <div>
+                <h3 class="project__title">bysohiba couture</h3>
+                <p class="project__desc">Сайт бренда вечерних платьев в Ташкенте: каталог, аренда и продажа, индивидуальный пошив и запись на примерку. Русский и узбекский.</p>
+              </div>
+              <ul class="tags"><li>Мода</li><li>Каталог</li><li>RU · UZ</li></ul>
+            </div>
+          </article>
+
+          <article class="project project--wide" data-case="orchestra" data-cursor="view" data-reveal>
+            <div class="project__media project__media--poster">
+              <div class="poster" aria-hidden="true">
+                <svg class="poster__staff" viewBox="0 0 1200 600" preserveAspectRatio="none">
+                  <path d="M-20 250 C 250 170, 450 330, 700 250 S 1050 170, 1220 240"/>
+                  <path d="M-20 272 C 250 192, 450 352, 700 272 S 1050 192, 1220 262"/>
+                  <path d="M-20 294 C 250 214, 450 374, 700 294 S 1050 214, 1220 284"/>
+                  <path d="M-20 316 C 250 236, 450 396, 700 316 S 1050 236, 1220 306"/>
+                  <path d="M-20 338 C 250 258, 450 418, 700 338 S 1050 258, 1220 328"/>
+                  <g class="poster__notes">
+                    <g><circle cx="150" cy="236" r="9"/></g>
+                    <g><circle cx="330" cy="262" r="9"/></g>
+                    <g><circle cx="880" cy="234" r="9"/></g>
+                    <g><circle cx="1040" cy="214" r="9"/></g>
+                  </g>
+                </svg>
+                <div class="poster__title">
+                  <small>Министерство культуры · Филармония Узбекистана</small>
+                  <strong>Национальный оркестр</strong>
+                  <span>Официальный сайт</span>
+                </div>
+              </div>
+            </div>
+            <div class="project__info">
+              <span class="project__num">02</span>
+              <div>
+                <h3 class="project__title">Национальный оркестр Филармонии Узбекистана</h3>
+                <p class="project__desc">Официальный сайт оркестра — проект для Министерства культуры Республики Узбекистан.</p>
+              </div>
+              <ul class="tags"><li>Госсектор</li><li>Культура</li></ul>
+            </div>
+          </article>
+
+        </div>
       </div>
+    </section>
 
-      <div class="cases">
-
-        <article class="case case--wide reveal">
-          <div class="case__media cover cover--orchestra">
-            <svg class="cover__staff" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M-20 250 C 250 170, 450 330, 700 250 S 1050 170, 1220 240"/>
-              <path d="M-20 272 C 250 192, 450 352, 700 272 S 1050 192, 1220 262"/>
-              <path d="M-20 294 C 250 214, 450 374, 700 294 S 1050 214, 1220 284"/>
-              <path d="M-20 316 C 250 236, 450 396, 700 316 S 1050 236, 1220 306"/>
-              <path d="M-20 338 C 250 258, 450 418, 700 338 S 1050 258, 1220 328"/>
-              <g class="cover__notes"><circle cx="150" cy="236" r="9"/><circle cx="330" cy="262" r="9"/><circle cx="880" cy="234" r="9"/><circle cx="1040" cy="214" r="9"/></g>
-            </svg>
-            <span class="cover__text">
-              <small>Филармония Узбекистана</small>
-              <strong>Национальный оркестр</strong>
-            </span>
+    <!-- Why -->
+    <section class="why">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <span class="eyebrow" data-reveal>(02) Почему Raqam Studio</span>
+          <h2 class="section-title section-title--wide" data-reveal>Сайт — продавец, который работает круглые сутки</h2>
+        </div>
+        <div class="why__grid">
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span>
+            <h3>Сначала телефон</h3>
+            <p>Большинство клиентов открывают сайт со смартфона, поэтому мы проектируем мобильную версию первой.</p>
           </div>
-          <div class="case__body">
-            <div class="case__head">
-              <h3 class="case__title">Национальный оркестр Филармонии Узбекистана</h3>
-              <span class="case__year">Госсектор · Культура</span>
-            </div>
-            <dl class="case__meta">
-              <div><dt>Клиент</dt><dd>Министерство культуры Республики Узбекистан</dd></div>
-              <div><dt>Что сделали</dt><dd>Официальный сайт оркестра: дизайн и разработка</dd></div>
-            </dl>
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></svg></span>
+            <h3>Заявки сразу к вам</h3>
+            <p>Записи, брони и заказы приходят в Telegram или на почту, а не теряются в переписке.</p>
           </div>
-        </article>
-
-        <article class="case reveal">
-          <div class="case__media cover cover--sohiba">
-            <span class="cover__text">
-              <small>Бренд платьев</small>
-              <strong>bysohiba</strong>
-              <span>dresses</span>
-            </span>
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+            <h3>Вас находят в поиске</h3>
+            <p>Быстрая загрузка, правильная структура, Google, Яндекс и 2ГИС приводят новых клиентов.</p>
           </div>
-          <div class="case__body">
-            <div class="case__head">
-              <h3 class="case__title">bysohiba dresses</h3>
-              <span class="case__year">Мода</span>
-            </div>
-            <dl class="case__meta">
-              <div><dt>Клиент</dt><dd>Бренд платьев bysohiba</dd></div>
-              <div><dt>Что сделали</dt><dd>Сайт бренда: дизайн и разработка</dd></div>
-            </dl>
+          <div class="why__card" data-reveal>
+            <span class="why__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+            <h3>Вы сами меняете сайт</h3>
+            <p>Цены, товары, меню и новости вы обновляете сами, без программиста.</p>
           </div>
-        </article>
-
-        <article class="case reveal">
-          <div class="case__media cover cover--restaurants">
-            <span class="cover__text">
-              <small>Ташкент</small>
-              <strong>Рестораны</strong>
-              <span>меню · бронь · доставка</span>
-            </span>
-          </div>
-          <div class="case__body">
-            <div class="case__head">
-              <h3 class="case__title">Сайты для ресторанов</h3>
-              <span class="case__year">HoReCa</span>
-            </div>
-            <dl class="case__meta">
-              <div><dt>Клиенты</dt><dd>Несколько ресторанов Ташкента, в том числе грузинской кухни</dd></div>
-              <div><dt>Что сделали</dt><dd>Сайты с меню, контактами и бронированием</dd></div>
-            </dl>
-          </div>
-        </article>
-
+        </div>
       </div>
     </section>
 
     <!-- Services -->
     <section class="services" id="services">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Услуги</p>
-            <h2 class="section-title reveal">Что мы делаем</h2>
-          </div>
-          <p class="section-head__note reveal">Берём проект целиком: от структуры и дизайна до запуска и поддержки.</p>
+        <div class="section-head section-head--split">
+          <span class="eyebrow" data-reveal>(03) Услуги</span>
+          <h2 class="section-title" data-reveal>Что мы делаем</h2>
         </div>
-        <div class="svc">
-          <article class="svc__card reveal">
+        <ul class="svc">
+          <li class="svc__item" data-reveal>
             <span class="svc__num">01</span>
-            <h3>Сайты для бизнеса и брендов</h3>
-            <p>Корпоративные сайты, лендинги и сайты брендов. Дизайн под ваш стиль, а не шаблон.</p>
-          </article>
-          <article class="svc__card reveal">
+            <h3 class="svc__title">Сайты для брендов</h3>
+            <p class="svc__desc">Сайты и каталоги для брендов одежды, салонов и студий: стиль бренда, красивые фото, запись и заявки.</p>
+            <span class="svc__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
             <span class="svc__num">02</span>
-            <h3>Сайты для ресторанов и кафе</h3>
-            <p>Меню с ценами и фото, бронирование стола, онлайн-заказ и доставка с уведомлением в Telegram.</p>
-          </article>
-          <article class="svc__card reveal">
+            <h3 class="svc__title">Сайты для ресторанов</h3>
+            <p class="svc__desc">Меню с ценами и фото, бронирование стола, доставка и QR-меню для залов.</p>
+            <span class="svc__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
             <span class="svc__num">03</span>
-            <h3>Интернет-магазины</h3>
-            <p>Каталог, фильтры, корзина, оплата Payme и Click, заказы в Telegram или CRM.</p>
-          </article>
-          <article class="svc__card reveal">
+            <h3 class="svc__title">Интернет-магазины</h3>
+            <p class="svc__desc">Каталог с фильтрами, корзина, оплата Payme и Click, заказы в Telegram или CRM.</p>
+            <span class="svc__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
             <span class="svc__num">04</span>
-            <h3>Сайты для госучреждений и культуры</h3>
-            <p>Официальные сайты организаций, театров и коллективов: строгий стиль, понятная структура, версии на нескольких языках.</p>
-          </article>
-          <article class="svc__card reveal">
+            <h3 class="svc__title">Госсектор и культура</h3>
+            <p class="svc__desc">Официальные сайты учреждений, театров и коллективов: строгий стиль, понятная структура, несколько языков.</p>
+            <span class="svc__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
             <span class="svc__num">05</span>
-            <h3>SEO и продвижение</h3>
-            <p>Быстрая загрузка, правильная структура, Google, Яндекс и 2ГИС — чтобы вас находили новые клиенты.</p>
-          </article>
-          <article class="svc__card reveal">
+            <h3 class="svc__title">SEO и продвижение</h3>
+            <p class="svc__desc">Скорость, структура, Google, Яндекс и 2ГИС, связка с Instagram и Telegram.</p>
+            <span class="svc__arrow" aria-hidden="true">↗</span>
+          </li>
+          <li class="svc__item" data-reveal>
             <span class="svc__num">06</span>
-            <h3>Цифровизация и автоматизация</h3>
-            <p>Telegram-боты, личные кабинеты, интеграции с CRM и переход с Excel на удобные системы.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why -->
-    <section class="why container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow reveal">Почему Raqam</p>
-          <h2 class="section-title reveal">Сайт — это продавец, который работает круглые сутки</h2>
-        </div>
-      </div>
-      <div class="why__grid">
-        <div class="why__item reveal">
-          <h3>Мобильная версия в первую очередь</h3>
-          <p>Большинство клиентов открывают сайт с телефона, поэтому мы проектируем сначала для него, а потом для компьютера.</p>
-        </div>
-        <div class="why__item reveal">
-          <h3>Быстро и без лишнего</h3>
-          <p>Лёгкий код без тяжёлых конструкторов: сайт открывается быстро даже на мобильном интернете.</p>
-        </div>
-        <div class="why__item reveal">
-          <h3>Заявки сразу к вам</h3>
-          <p>Формы, брони и заказы приходят в Telegram или на почту, а не теряются в переписке.</p>
-        </div>
-        <div class="why__item reveal">
-          <h3>Вы сами меняете сайт</h3>
-          <p>Делаем удобное редактирование: цены, меню, товары и новости вы обновляете без программиста.</p>
-        </div>
+            <h3 class="svc__title">Цифровизация</h3>
+            <p class="svc__desc">Telegram-боты, личные кабинеты, интеграции с CRM и переход с Excel на удобные системы.</p>
+            <span class="svc__arrow" aria-hidden="true">↗</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -251,84 +285,106 @@
     <section class="process" id="process">
       <div class="container">
         <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Как работаем</p>
-            <h2 class="section-title reveal">Четыре шага до запуска</h2>
+          <span class="eyebrow" data-reveal>(04) Процесс</span>
+          <h2 class="section-title" data-reveal>Четыре шага до запуска</h2>
+        </div>
+        <div class="steps">
+          <div class="step" data-reveal>
+            <span class="step__num">01</span>
+            <h3 class="step__title">Знакомство</h3>
+            <p>Обсуждаем задачу, смотрим ваш бизнес и конкурентов, фиксируем объём, сроки и цену.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__num">02</span>
+            <h3 class="step__title">Дизайн</h3>
+            <p>Рисуем структуру и макеты в стиле вашего бренда и вносим правки, пока всё не понравится.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__num">03</span>
+            <h3 class="step__title">Разработка</h3>
+            <p>Собираем быстрый сайт, подключаем формы, оплату и уведомления, проверяем на телефонах.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step__num">04</span>
+            <h3 class="step__title">Запуск</h3>
+            <p>Публикуем на вашем домене, настраиваем SEO и аналитику и остаёмся на связи.</p>
           </div>
         </div>
-        <ol class="steps">
-          <li class="step reveal"><span class="step__num">01</span><h3>Знакомство</h3><p>Обсуждаем задачу, смотрим ваш бизнес и конкурентов, фиксируем объём, сроки и цену.</p></li>
-          <li class="step reveal"><span class="step__num">02</span><h3>Дизайн</h3><p>Рисуем структуру и макеты под ваш бренд. Вносим правки, пока всё не понравится.</p></li>
-          <li class="step reveal"><span class="step__num">03</span><h3>Разработка</h3><p>Собираем быстрый сайт, подключаем формы, оплату и уведомления, проверяем на телефонах.</p></li>
-          <li class="step reveal"><span class="step__num">04</span><h3>Запуск</h3><p>Публикуем на вашем домене, настраиваем SEO и аналитику и остаёмся на связи.</p></li>
-        </ol>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq container" id="faq">
-      <div class="section-head">
+    <section class="faq" id="faq">
+      <div class="container faq__grid">
         <div>
-          <p class="eyebrow reveal">Вопросы</p>
-          <h2 class="section-title reveal">Частые вопросы</h2>
+          <span class="eyebrow" data-reveal>(05) Вопросы</span>
+          <h2 class="section-title" data-reveal>Частые вопросы</h2>
         </div>
-      </div>
-      <div class="faq__list">
-        <details class="faq__item reveal">
-          <summary>Сколько стоит сайт?<i aria-hidden="true"></i></summary>
-          <p>Зависит от задачи: лендинг, сайт ресторана и интернет-магазин — разный объём работы. После короткого разговора назовём точную цену и сроки и зафиксируем их.</p>
-        </details>
-        <details class="faq__item reveal">
-          <summary>Работаете с государственными организациями?<i aria-hidden="true"></i></summary>
-          <p>Да. Например, мы сделали сайт Национального оркестра Филармонии Узбекистана для Министерства культуры.</p>
-        </details>
-        <details class="faq__item reveal">
-          <summary>У нас нет фото и текстов. Это проблема?<i aria-hidden="true"></i></summary>
-          <p>Нет. Поможем с текстами и подскажем, как снять блюда, товары или команду, чтобы сайт выглядел дорого.</p>
-        </details>
-        <details class="faq__item reveal">
-          <summary>Смогу ли я сам обновлять сайт?<i aria-hidden="true"></i></summary>
-          <p>Да. Цены, меню, товары и новости можно менять самостоятельно, без программиста.</p>
-        </details>
-        <details class="faq__item reveal">
-          <summary>Что нужно, чтобы начать?<i aria-hidden="true"></i></summary>
-          <p>Оставьте заявку ниже или напишите нам. Достаточно пары слов о бизнесе и ссылки на Instagram или текущий сайт, если он есть.</p>
-        </details>
+        <div class="faq__list">
+          <details class="faq__item" data-reveal>
+            <summary>Сколько стоит сайт?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Зависит от задачи: сайт бренда, сайт ресторана и интернет-магазин — разный объём работы. После короткого разговора назовём точную цену и сроки и зафиксируем их.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>Работаете с государственными организациями?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Да. Например, мы сделали сайт Национального оркестра Филармонии Узбекистана для Министерства культуры.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>Сайт будет на русском и узбекском?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Да, если нужно. Например, сайт bysohiba работает на двух языках с переключателем RU · UZ.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>У нас нет фото и текстов. Это проблема?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Нет. Поможем с текстами и подскажем, как снять товары, блюда или команду, чтобы сайт выглядел дорого.</p></div>
+          </details>
+          <details class="faq__item" data-reveal>
+            <summary>Смогу ли я сам обновлять сайт?<i aria-hidden="true"></i></summary>
+            <div class="faq__body"><p>Да. Цены, каталог, меню и новости можно менять самостоятельно, без программиста.</p></div>
+          </details>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="contact" id="contact">
-      <div class="container contact__grid">
-        <div>
-          <p class="eyebrow eyebrow--light">Контакты</p>
-          <h2 class="contact__title">Расскажите о&nbsp;проекте — <em>ответим</em> в&nbsp;течение дня</h2>
-          <p class="contact__note">Ташкент, Узбекистан · <span class="js-time">--:--</span></p>
+      <div class="container">
+        <div class="contact__top">
+          <span class="eyebrow" data-reveal>(06) Контакты</span>
+          <h2 class="contact__title">
+            <span class="line"><span class="line__in">Есть проект?</span></span>
+            <span class="line"><span class="line__in">Давайте <em>сделаем</em></span></span>
+          </h2>
         </div>
-        <form class="form" id="contactForm" novalidate>
-          <label class="field">
-            <span>Имя и компания</span>
-            <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Например, Алишер, ресторан «Сулугуни»">
-          </label>
-          <label class="field">
-            <span>Телефон или Telegram</span>
-            <input type="text" id="f-contact" name="contact" required placeholder="+998 … или @username">
-          </label>
+
+        <form class="form" id="contactForm" novalidate data-reveal>
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Как вас зовут</span>
+              <input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Имя и компания">
+            </label>
+            <label class="field">
+              <span class="field__label">Как с вами связаться</span>
+              <input type="text" id="f-contact" name="contact" required placeholder="Телефон или Telegram">
+            </label>
+          </div>
           <fieldset class="chips">
-            <legend>Что нужно</legend>
-            <label class="chip"><input type="checkbox" name="type" value="Сайт для бизнеса"><span>Сайт для бизнеса</span></label>
+            <legend class="field__label">Что нужно</legend>
+            <label class="chip"><input type="checkbox" name="type" value="Сайт бренда"><span>Сайт бренда</span></label>
             <label class="chip"><input type="checkbox" name="type" value="Сайт ресторана"><span>Сайт ресторана</span></label>
             <label class="chip"><input type="checkbox" name="type" value="Интернет-магазин"><span>Интернет-магазин</span></label>
+            <label class="chip"><input type="checkbox" name="type" value="Сайт организации"><span>Сайт организации</span></label>
             <label class="chip"><input type="checkbox" name="type" value="SEO"><span>SEO</span></label>
             <label class="chip"><input type="checkbox" name="type" value="Другое"><span>Другое</span></label>
           </fieldset>
           <label class="field">
-            <span>Комментарий</span>
+            <span class="field__label">Коротко о задаче</span>
             <textarea id="f-message" name="message" rows="3" placeholder="Ссылка на Instagram или текущий сайт, сроки"></textarea>
           </label>
           <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form__foot">
-            <button type="submit" class="btn btn--accent btn--lg"><span class="js-submit-label">Отправить заявку</span> <i aria-hidden="true">→</i></button>
+            <button type="submit" class="btn btn--accent btn--lg" data-magnetic>
+              <span class="js-submit-label">Отправить заявку</span><i class="btn__arrow">→</i>
+            </button>
             <p class="form__status" role="status" aria-live="polite"></p>
           </div>
         </form>
@@ -336,26 +392,40 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__top">
-        <a href="#top" class="logo logo--light" aria-label="Raqam — наверх">
-          <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><rect x="7" y="7" width="18" height="18" rx="2"/><rect x="7" y="7" width="18" height="18" rx="2" transform="rotate(45 16 16)"/></g><circle cx="16" cy="16" r="3" fill="currentColor"/></svg>
-          <span>raqam<b>.</b></span>
-        </a>
-        <nav class="footer__nav" aria-label="Навигация в подвале">
-          <a href="#work">Работы</a>
-          <a href="#services">Услуги</a>
-          <a href="#process">Как работаем</a>
-          <a href="#contact">Контакты</a>
-        </nav>
+      <div class="footer__row">
+        <div>
+          <p class="footer__label">Студия</p>
+          <p>Raqam Studio — разработка<br>сайтов в Ташкенте<br><span class="js-time">--:--</span> GMT+5</p>
+        </div>
+        <div>
+          <p class="footer__label">Навигация</p>
+          <p><a href="#work">Работы</a><br><a href="#services">Услуги</a><br><a href="#process">Процесс</a><br><a href="#contact">Контакты</a></p>
+        </div>
+        <div>
+          <p class="footer__label">Работы</p>
+          <p>bysohiba couture<br>Национальный оркестр</p>
+        </div>
+        <a href="#top" class="totop" data-magnetic aria-label="Наверх">↑</a>
       </div>
+      <div class="footer__brand" aria-hidden="true">raqam<span>.</span>studio</div>
       <div class="footer__bottom">
-        <span>© 2026 Raqam — разработка сайтов в Ташкенте</span>
+        <span>© 2026 Raqam Studio</span>
         <span>Raqam по-узбекски значит «цифра»</span>
       </div>
     </div>
   </footer>
+
+  <!-- Case study overlay -->
+  <div class="case" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="caseTitle">
+    <div class="case__backdrop" data-close></div>
+    <div class="case__panel" data-lenis-prevent>
+      <button class="case__close" data-close aria-label="Закрыть"><span></span><span></span></button>
+      <div class="case__content" id="caseContent"></div>
+    </div>
+  </div>
 
   <script src="assets/vendor/lenis.min.js" defer></script>
   <script src="main.js" defer></script>
